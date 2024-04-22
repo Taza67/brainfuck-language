@@ -30,6 +30,58 @@
  */
 #define AST_EMPTY NULL
 
+/**
+ * @def AST_ROOT_STR
+ * @brief Racine d'un AST pour son impression.
+ * 
+ */
+#define AST_ROOT_STR	"[PROGRAM]"
+
+/**
+ * @def AST_TAB_STR
+ * @brief Caractère de tabulation dans l'impression d'un AST.
+ * 
+ */
+#define AST_TAB_STR 	"\t"
+
+/**
+ * @def AST_OBRA_STR
+ * @brief Caractère de début d'un ensemble de fils.
+ * 
+ * @see AST_CBRA_STR
+ */
+#define AST_OBRA_STR	"{"
+
+/**
+ * @def AST_CBRA_STR
+ * @brief Caractère de fermeture d'un ensemble de fils.
+ * 
+ * @see AST_OBRA_STR
+ */
+#define AST_CBRA_STR	"}"
+
+/**
+ * @def AST_TYPE_FORMAT
+ * @brief Format d'impression du type d'un arbre.
+ * 
+ */
+#define AST_TYPE_FORMAT	"TYPE[%s]"
+
+/**
+ * @def AST_LEX_FORMAT
+ * @brief Format d'impression du numéro lexicographique d'un arbre.
+ * 
+ */
+#define AST_LEX_FORMAT 	"LEX[%d]"
+
+/**
+ * @def AST_SYM_FORMAT
+ * @brief Format d'impression du numéro de symbole d'un arbre.
+ * 
+ */
+#define AST_SYM_FORMAT 	"SYM[%d]"
+
+
 /* -------------------------------------------------------------------------- */
 /*                                    TYPES                                   */
 /* -------------------------------------------------------------------------- */
@@ -125,8 +177,72 @@ extern bool ast_is_empty(Asttree tree);
  * @note Un type de données inconnu provoquera une erreur.
  * @note Il s'agit d'une fonction variadique. Les appels de fonctions dépendront
  * du type de données à affecter.
+ * @note - Données de type constante :
+ * 	   ast(ASTDATA_TYPE_CONST, type: <int>, constant: <int>)
+ * @note - Données de type arbre :
+ *     ast(ASTDATA_TYPE_TREE, type: <int>, id_lex: <int>, id_symb: <int>,
+ *         son: Asttree, little_brother: Asttree)
  */
 extern Asttree ast(Astdata_type data_type, ...);
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Donne un fils à un arbre et retourne l'arbre père.
+ * 
+ * @param tree L'arbre qui reçoit un fils.
+ * @param son L'arbre fils.
+ * @return Asttree L'arbre père.
+ * 
+ * @note L'arbre ne peut pas recevoir de fils, s'il est déjà un arbre père, si
+ * il a déjà un fils.
+ * @note Les éléments suivants provoqueront une erreur :
+ * @note - Arbre (père) vide.
+ * @note - Arbre (père) a déjà un fils.
+ */
+extern Asttree ast_add_son(Asttree tree, Asttree son);
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Donne un petit-frère à un arbre et retourne l'arbre grand-frère.
+ * 
+ * @param tree L'arbre qui reçoit un frère.
+ * @param little_brother L'arbre petit-frère.
+ * @return Asttree L'arbre grand-frère.
+ * 
+ * @note L'arbre ne peut pas recevoir de petit-frère s'il est déjà un arbre
+ * grand-frère, s'il a déjà un petit-frère.
+ * @note Les éléments suivants provoqueront une erreur :
+ * @note - Arbre (grand-frère) vide.
+ * @note - Arbre (grand-frère) a déjà un petit-frère.
+ */
+extern Asttree ast_add_little_brother(Asttree tree, Asttree little_brother);
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Libère la mémoire allouée à l'intégralité de l'arbre (racine, fils,
+ * petit-frères).
+ * 
+ * @param tree L'arbre dont la mémoire doit être libérée.
+ * 
+ * @note Attention ! Il ne faut surtout pas qu'il y ait de cycle dans l'arbre.
+ */
+extern void ast_free(Asttree tree);
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Imprime un arbre sur la sortie spécifiée sous un format lisible pour
+ * l'oeil humain.
+ * 
+ * @param tree L'arbre à imprimer.
+ * @param types Les chaînes de caractères associées aux types d'arbres
+ * possibles.
+ * @param out La sortie sur laquelle imprimer l'arbre (Par défaut, stdout).
+ */
+extern void ast_print(Asttree tree, char *types[], FILE* out);
 
 /* -------------------------------------------------------------------------- */
 
