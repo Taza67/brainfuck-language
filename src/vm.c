@@ -105,6 +105,19 @@ static void execute_instruction(Asttree tree) {
 /* -------------------------------------------------------------------------- */
 
 /**
+ * @brief Libère la mémoire allouée à la pile de données de l'interpréteur
+ * Brainfuck.
+ * 
+ */
+static void free_stack() {
+	free(data_stack);
+	data_stack = NULL;
+	ptr = NULL;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/**
  * @brief Exécute un programme Brainfuck représenté sous forme d'un arbre de
  * syntaxe abstraite (AST).
  * 
@@ -113,6 +126,7 @@ static void execute_instruction(Asttree tree) {
 void execute_program(Asttree tree) {
 	init_stack();
 	execute_instruction(tree);
+	free_stack();
 }
 
 /* -------------------------------------------------------------------------- */
