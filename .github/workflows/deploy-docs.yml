@@ -1,0 +1,28 @@
+name: Deploy Documentation
+
+on:
+  push:
+        branches:
+            - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      
+      - name: Install Dependecies
+        run: sudo apt-get install graphviz
+      
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PAGES_TOKEN_2 }}
+          publish_dir: ./docs/html
