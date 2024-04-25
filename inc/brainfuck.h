@@ -73,6 +73,21 @@
 #define EMPTY_BUFFER() \
 	char _c = 0; while ((_c = getchar()) != '\n' && _c != EOF) \
 
+/**
+ * @def AST_TYPES_STRINGS
+ * @brief Ensemble des chaînes de caractères associées à chaque type d'arbre
+ * possible pour un arbre de syntaxe abstraite (AST) du langage Brainfuck.
+ * 
+ * @note Les chaînes doivent OBLIGATOIREMENT être dans le même ordre que l'énu-
+ * mération qui définit les codes des types d'arbres.
+ * 
+ * @see AST_TYPES 
+ */
+#define AST_TYPES_STRINGS { \
+	"PLUS", "MOINS", "DROITE", "GAUCHE", \
+	"ÉCRITURE", "LECTURE", "BOUCLE" \
+}
+
 
 
 /* -------------------------------------------------------------------------- */
