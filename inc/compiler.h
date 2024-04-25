@@ -58,6 +58,94 @@
  */
 #define CMODE_CC_ARG "c"
 
+/* --------------------------------- Python --------------------------------- */
+
+/**
+ * @def PYTHON_HEADER
+ * @brief Chaîne de caractères représentant l'entête d'un programme Brainfuck
+ * convertis en programme python.
+ * 
+ */
+#define PYTHON_HEADER \
+	"#!/usr/bin/env python3\n\n" \
+	"STACK_LENGTH = 32000\n\n" \
+	"def main():\n" \
+	"\tstack = [0] * STACK_LENGTH\n" \
+	"\ti = 0\n"
+
+/**
+ * @def PYTHON_FOOTER
+ * @brief Chaîne de caractères représentant le pied d'un programme Brainfuck
+ * convertis en programme python.
+ * 
+ */
+#define PYTHON_FOOTER \
+	"\n" \
+	"main()\n"
+
+/**
+ * @def PYTHON_LOOP
+ * @brief Chaîne de caractères représentant une boucle d'un programme Brainfuck
+ * convertis en programme python.
+ * 
+ */
+#define PYTHON_LOOP \
+	"while (stack[i]):\n"
+
+/**
+ * @def PYTHON_INC
+ * @brief Chaîne de caractères représentant l'instruction d'incrémentation d'un
+ * programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_INC \
+	"stack[i] += 1\n"
+
+/**
+ * @def PYTHON_DEC
+ * @brief Chaîne de caractères représentant l'instruction de décrémentation d'un
+ * programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_DEC \
+	"stack[i] -= 1\n"
+
+/**
+ * @def PYTHON_LEFT
+ * @brief Chaîne de caractères représentant l'instruction de déplacement vers la
+ * gauche d'un programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_LEFT \
+	"i -= 1\n"
+
+/**
+ * @def PYTHON_RIGHT
+ * @brief Chaîne de caractères représentant l'instruction de déplacement vers la
+ * droite d'un programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_RIGHT \
+	"i += 1\n"
+
+/**
+ * @def PYTHON_PUT
+ * @brief Chaîne de caractères représentant l'instruction d'écriture d'un
+ * programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_PUT \
+	"print(chr(stack[i]), end=\"\")\n"
+
+/**
+ * @def PYTHON_GET
+ * @brief Chaîne de caractères représentant l'instruction de lecture d'un
+ * programme Brainfuck convertis en programme python.
+ * 
+ */
+#define PYTHON_GET \
+	"stack[i] = input(1)\n"
+
 /* -------------------------------------------------------------------------- */
 /*                                 CONSTANTES                                 */
 /* -------------------------------------------------------------------------- */
@@ -77,6 +165,17 @@ enum COMPILER_MODES {
 
 /* -------------------------------------------------------------------------- */
 /*                          PROTOTYPES DES FONCTIONS                          */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en
+ * un programme Python.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre de syntaxe à convertir.
+ */
+extern void ast_to_python(FILE *out, Asttree tree);
+
 /* -------------------------------------------------------------------------- */
 
 /**

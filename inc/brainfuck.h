@@ -19,6 +19,7 @@
 #include "merror.h"
 #include "ast.h"
 #include "tstack.h"
+#include "utilities.h"
 
 /* -------------------------------------------------------------------------- */
 /*                                   MACROS                                   */

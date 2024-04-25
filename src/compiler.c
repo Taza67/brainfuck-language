@@ -56,6 +56,89 @@ static void compile_to_bytecode(char *outpath) {
 
 /* --------------------------------- PYTHON --------------------------------- */
 
+/**
+ * @brief Fonction auxiliaire à ast_to_python.
+ * 
+ * Imprime le programme Python correspondant à l'arbre donné sur la
+ * sortie donnée.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre à convertir.
+ * @param depth La profondeur (indentation) de l'arbre.
+ * 
+ * @note Un type d'arbre inconnue provoquera une erreur.
+ */
+static void ast_to_python_aux(FILE *out, Asttree tree, int depth) {
+	int count;
+
+	if (ast_is_empty(tree)) return;
+
+	// Le champ 'numéro lexical' est utilisé pour indiquer le nombre
+	// d'opérations simples successives.
+	count = tree->id_lex;
+
+	switch (tree->type) {
+		case A_LOOP:
+			print_indent(out, depth);
+			fprintf(out, PYTHON_LOOP);
+			ast_to_python_aux(out, tree->son, depth + 1);
+			break;
+		case A_INC:
+			print_simple_inst(out, PYTHON_INC, count, depth);
+			break;
+		case A_DEC:
+			print_simple_inst(out, PYTHON_DEC, count, depth);
+			break;
+		case A_LEFT:
+			print_simple_inst(out, PYTHON_LEFT, count, depth);
+			break;
+		case A_RIGHT:
+			print_simple_inst(out, PYTHON_RIGHT, count, depth);
+			break;
+		case A_PUT:
+			print_simple_inst(out, PYTHON_PUT, count, depth);
+			break;
+		case A_GET:
+			print_simple_inst(out, PYTHON_GET, count, depth);
+			break;
+		default:
+			merror("ast_to_python_aux() : 'tree->type' inconnu !");
+	}
+
+	ast_to_python_aux(out, tree->little_brother, depth);
+}
+
+/**
+ * @brief Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en
+ * un programme Python.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre de syntaxe à convertir.
+ */
+void ast_to_python(FILE *out, Asttree tree) {
+	fprintf(out, PYTHON_HEADER);
+	ast_to_python_aux(out, tree, 1);
+	fprintf(out, PYTHON_FOOTER);
+}
+
+/**
+ * @brief Convertis l'arbre de syntaxe abstraite global en un programme Python.
+ * 
+ * @param outpath Le fichier de sortie.
+ */
+static void compile_to_python(char *outpath) {
+	// Ouverture du fichier de sortie
+	FILE *out = fopen(outpath, "w+");
+	if (out == NULL)
+		merror("compile_to_python() : Échec de l'ouverture du fichier \"%s\"",
+			   outpath);
+	
+	// Compilation
+	ast_to_python(out, prog_tree);
+
+	fclose(out);
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* ------------------------------------ C ----------------------------------- */
@@ -133,6 +216,8 @@ void compile(int argc, char *argv[]) {
 	// Compilation
 	switch (mode) {
 		case CMODE_CBC: compile_to_bytecode(outpath); break;
+		case CMODE_CPC:
+		case CMODE_BPC: compile_to_python(outpath);   break;
 	}
 }
 
