@@ -139,8 +139,6 @@ static void compile_to_python(char *outpath) {
 	fclose(out);
 }
 
-/* -------------------------------------------------------------------------- */
-
 /* ------------------------------------ C ----------------------------------- */
 
 /**
@@ -305,6 +303,9 @@ void compile(int argc, char *argv[]) {
 		case CMODE_CCC:
 		case CMODE_BCC: compile_to_c(outpath);		  break;
 	}
+
+	ast_free(prog_tree);
+	prog_tree = NULL;
 }
 
 /* -------------------------------------------------------------------------- */

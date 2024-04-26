@@ -31,6 +31,9 @@ int parse(char *filepath, FILE** inp, int (*parser)(void),
 			   filepath);
 	
 	parse_ret = (*parser)();
+	
+	fclose(*inp);
+	(*lex_destroy)();
 	return parse_ret;
 }
 
