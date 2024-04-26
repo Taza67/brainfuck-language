@@ -39,4 +39,35 @@ void print_simple_inst(FILE *out, char *inst, int count, int depth) {
 	}
 }
 
+/* ---------------------------------- Main ---------------------------------- */
+
+/**
+ * @brief Affiche la notice d'utilisation du programme.
+ * 
+ * @param program Le nom du programme.
+ * @param format Le format du message pré-notice à afficher.
+ * @param ... Les arguments à placer dans le format du message.
+ * 
+ * @see HELP_NOTICE_FORMAT
+ */
+void usage(char *program, char *format, ...) {
+    va_list args;
+
+	// Message
+    va_start(args, format);
+		if (strlen(format) != 0) {
+			fprintf(stderr, "- Message -> ");
+			vfprintf(stderr, format, args);
+
+			if (format[strlen(format)] != '\n')
+				fprintf(stderr, "\n");
+		}
+    va_end(args);
+
+	// Notice
+    printf(HELP_NOTICE_FORMAT, program);
+
+    exit(EXIT_FAILURE);
+}
+
 /* -------------------------------------------------------------------------- */

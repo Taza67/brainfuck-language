@@ -48,4 +48,17 @@ extern void print_simple_inst(FILE *out, char *inst, int count, int depth);
 
 /* -------------------------------------------------------------------------- */
 
+/**
+ * @brief Affiche la notice d'utilisation du programme.
+ * 
+ * @param program Le nom du programme.
+ * @param format Le format du message pré-notice à afficher.
+ * @param ... Les arguments à placer dans le format du message.
+ * 
+ * @see HELP_NOTICE_FORMAT
+ */
+extern void usage(char *program, char *format, ...);
+
+/* -------------------------------------------------------------------------- */
+
 #endif
