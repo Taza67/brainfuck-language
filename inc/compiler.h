@@ -146,6 +146,102 @@
 #define PYTHON_GET \
 	"stack[i] = input(1)\n"
 
+/* ------------------------------------ C ----------------------------------- */
+
+/**
+ * @def C_HEADER
+ * @brief Chaîne de caractères représentant l'entête d'un programme Brainfuck
+ * converti en programme C.
+ * 
+ */
+#define C_HEADER \
+	"#include <stdio.h>\n" \
+	"#include <stdlib.h>\n\n" \
+	"#define STACK_LENGTH 32000\n\n" \
+	"int main(void) {\n" \
+	"\tint *stack = malloc(STACK_LENGTH * sizeof(int));\n" \
+	"\tint *ptr = stack;\n"
+
+/**
+ * @def C_FOOTER
+ * @brief Chaîne de caractères représentant le pied d'un programme Brainfuck
+ * converti en programme C.
+ * 
+ */
+#define C_FOOTER \
+	"}\n"
+
+/**
+ * @def C_LOOP_BEGIN
+ * @brief Chaîne de caractères représentant le début d'une boucle d'un programme
+ * Brainfuck converti en programme C.
+ * 
+ */
+#define C_LOOP_BEGIN \
+	"while (*ptr) {\n"
+
+/**
+ * @brief Chaîne de caractères représentant la fin d'une boucle d'un programme
+ * Brainfuck converti en programme C.
+ * 
+ */
+#define C_LOOP_END \
+	"}\n"
+
+/**
+ * @def C_INC
+ * @brief Chaîne de caractères représentant l'instruction d'incrémentation d'un
+ * programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_INC \
+	"*ptr++;\n"
+
+/**
+ * @def C_DEC
+ * @brief Chaîne de caractères représentant l'instruction de décrémentation d'un
+ * programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_DEC \
+	"*ptr--;\n"
+
+/**
+ * @def C_LEFT
+ * @brief Chaîne de caractères représentant l'instruction de déplacement vers la
+ * gauche d'un programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_LEFT \
+	"ptr--;\n"
+
+/**
+ * @def C_RIGHT
+ * @brief Chaîne de caractères représentant l'instruction de déplacement vers la
+ * droite d'un programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_RIGHT \
+	"ptr++;\n"
+
+/**
+ * @def C_PUT
+ * @brief Chaîne de caractères représentant l'instruction d'écriture d'un
+ * programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_PUT \
+	"putchar(*ptr);\n"
+
+/**
+ * @def C_GET
+ * @brief Chaîne de caractères représentant l'instruction de lecture d'un
+ * programme Brainfuck converti en programme C.
+ * 
+ */
+#define C_GET \
+	"*ptr = getchar();\n"
+
 /* -------------------------------------------------------------------------- */
 /*                                 CONSTANTES                                 */
 /* -------------------------------------------------------------------------- */
@@ -175,6 +271,17 @@ enum COMPILER_MODES {
  * @param tree L'arbre de syntaxe à convertir.
  */
 extern void ast_to_python(FILE *out, Asttree tree);
+
+/* -------------------------------------------------------------------------- */
+
+/**
+ * @brief Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en
+ * un programme C.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre de syntaxe à convertir.
+ */
+extern void ast_to_c(FILE *out, Asttree tree);
 
 /* -------------------------------------------------------------------------- */
 

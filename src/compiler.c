@@ -143,6 +143,90 @@ static void compile_to_python(char *outpath) {
 
 /* ------------------------------------ C ----------------------------------- */
 
+/**
+ * @brief Fonction auxiliaire à ast_to_c.
+ * 
+ * Imprime le programme C correspondant à l'arbre donné sur la
+ * sortie donnée.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre à convertir.
+ * @param depth La profondeur (indentation) de l'arbre.
+ * 
+ * @note Un type d'arbre inconnue provoquera une erreur.
+ */
+static void ast_to_c_aux(FILE *out, Asttree tree, int depth) {
+	int count;
+
+	if (ast_is_empty(tree)) return;
+
+	// Le champ 'numéro lexical' est utilisé pour indiquer le nombre
+	// d'opérations simples successives.
+	count = tree->id_lex;
+
+	switch (tree->type) {
+		case A_LOOP:
+			print_indent(out, depth);
+			fprintf(out, C_LOOP_BEGIN);
+			ast_to_c_aux(out, tree->son, depth + 1);
+			fprintf(out, C_LOOP_END);
+			break;
+		case A_INC:
+			print_simple_inst(out, C_INC, count, depth);
+			break;
+		case A_DEC:
+			print_simple_inst(out, C_DEC, count, depth);
+			break;
+		case A_LEFT:
+			print_simple_inst(out, C_LEFT, count, depth);
+			break;
+		case A_RIGHT:
+			print_simple_inst(out, C_RIGHT, count, depth);
+			break;
+		case A_PUT:
+			print_simple_inst(out, C_PUT, count, depth);
+			break;
+		case A_GET:
+			print_simple_inst(out, C_GET, count, depth);
+			break;
+		default:
+			merror("ast_to_c_aux() : 'tree->type' inconnu !");
+	}
+
+	ast_to_c_aux(out, tree->little_brother, depth);
+}
+
+/**
+ * @brief Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en
+ * un programme C.
+ * 
+ * @param out Le fichier de sortie.
+ * @param tree L'arbre de syntaxe à convertir.
+ */
+void ast_to_c(FILE *out, Asttree tree) {
+	fprintf(out, C_HEADER);
+	ast_to_c_aux(out, tree, 1);
+	fprintf(out, C_FOOTER);
+}
+
+/**
+ * @brief Convertis l'arbre de syntaxe abstraite global en un programme C.
+ * 
+ * @param outpath Le fichier de sortie.
+ */
+static void compile_to_c(char *outpath) {
+	// Ouverture du fichier de sortie
+	FILE *out = fopen(outpath, "w+");
+	if (out == NULL)
+		merror("compile_to_c() : Échec de l'ouverture du fichier \"%s\"",
+			   outpath);
+	
+	// Compilation
+	ast_to_c(out, prog_tree);
+
+	fclose(out);
+}
+
 /* -------------------------------------------------------------------------- */
 
 /**
@@ -218,6 +302,8 @@ void compile(int argc, char *argv[]) {
 		case CMODE_CBC: compile_to_bytecode(outpath); break;
 		case CMODE_CPC:
 		case CMODE_BPC: compile_to_python(outpath);   break;
+		case CMODE_CCC:
+		case CMODE_BCC: compile_to_c(outpath);		  break;
 	}
 }
 
