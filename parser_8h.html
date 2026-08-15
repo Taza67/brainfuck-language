@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier inc/parser.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier parser.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant des fonctions liées à l'analyseur.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="brainfuck_8h_source.html">brainfuck.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de parser.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="parser_8h__incl.png" border="0" usemap="#ainc_2parser_8h" alt=""/></div>
+<map name="ainc_2parser_8h" id="ainc_2parser_8h">
+<area shape="rect" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="381,5,479,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="383,79,477,104"/>
+<area shape="poly" title=" " alt="" coords="433,31,433,65,427,65,427,31"/>
+<area shape="rect" title=" " alt="" coords="145,299,211,324"/>
+<area shape="poly" title=" " alt="" coords="383,99,220,118,139,134,107,144,83,154,52,175,28,197,21,209,18,221,20,235,27,249,42,262,68,275,132,296,130,301,66,280,39,266,22,252,14,236,13,221,16,207,24,194,49,170,81,150,105,139,138,129,219,113,382,94"/>
+<area shape="rect" title=" " alt="" coords="45,299,116,324"/>
+<area shape="poly" title=" " alt="" coords="383,97,298,101,196,111,103,128,67,140,42,154,21,175,11,197,9,222,18,250,32,271,51,288,47,292,28,274,13,252,4,222,5,196,17,172,39,150,65,135,102,123,196,106,297,96,382,91"/>
+<area shape="rect" title=" " alt="" coords="90,225,173,251"/>
+<area shape="poly" title=" " alt="" coords="407,107,168,222,166,217,405,102"/>
+<area shape="rect" title=" " alt="" coords="570,299,645,324"/>
+<area shape="poly" title=" " alt="" coords="446,102,498,150,555,223,596,286,591,289,550,226,495,154,443,106"/>
+<area shape="rect" title=" " alt="" coords="432,299,503,324"/>
+<area shape="poly" title=" " alt="" coords="441,103,475,153,493,188,506,225,508,238,506,251,487,289,482,286,501,250,503,238,501,226,488,190,470,156,437,106"/>
+<area shape="rect" title=" " alt="" coords="670,152,745,177"/>
+<area shape="poly" title=" " alt="" coords="475,101,657,148,656,153,474,107"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="391,225,469,251"/>
+<area shape="poly" title=" " alt="" coords="433,104,433,212,427,212,427,104"/>
+<area shape="rect" href="ast_8h.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="332,152,387,177"/>
+<area shape="poly" title=" " alt="" coords="420,106,382,144,378,140,416,102"/>
+<area shape="rect" href="tstack_8h.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="94,152,169,177"/>
+<area shape="poly" title=" " alt="" coords="382,107,182,154,181,149,381,101"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="769,152,851,177"/>
+<area shape="poly" title=" " alt="" coords="478,100,745,149,756,152,755,157,744,155,477,105"/>
+<area shape="poly" title=" " alt="" coords="392,253,226,299,224,294,390,248"/>
+<area shape="poly" title=" " alt="" coords="391,250,133,301,130,302,129,297,132,296,390,244"/>
+<area shape="poly" title=" " alt="" coords="459,248,567,291,565,296,457,253"/>
+<area shape="poly" title=" " alt="" coords="438,250,457,285,453,288,434,252"/>
+<area shape="poly" title=" " alt="" coords="360,178,348,214,338,234,324,253,301,270,276,284,226,303,224,298,274,280,298,266,320,249,333,232,343,212,354,177"/>
+<area shape="poly" title=" " alt="" coords="353,179,323,215,302,236,278,253,213,278,130,301,129,296,211,273,275,248,298,232,319,212,349,176"/>
+<area shape="poly" title=" " alt="" coords="332,177,182,224,180,219,331,172"/>
+<area shape="poly" title=" " alt="" coords="388,172,443,193,505,223,550,255,587,287,584,291,547,259,502,228,441,198,386,177"/>
+<area shape="poly" title=" " alt="" coords="388,168,438,186,463,202,483,224,489,240,489,256,482,287,476,286,484,256,484,241,478,227,460,206,436,191,386,173"/>
+<area shape="poly" title=" " alt="" coords="373,176,411,214,407,218,369,180"/>
+<area shape="rect" title=" " alt="" coords="197,225,265,251"/>
+<area shape="poly" title=" " alt="" coords="340,180,266,221,263,216,337,175"/>
+<area shape="poly" title=" " alt="" coords="100,180,72,193,47,210,32,229,32,239,36,249,50,261,74,273,132,294,130,299,72,278,47,266,32,252,26,239,27,227,43,206,69,188,97,175"/>
+<area shape="poly" title=" " alt="" coords="95,179,57,197,40,210,27,226,23,243,28,259,40,274,54,288,51,292,36,278,24,261,18,243,22,224,36,206,54,192,92,174"/>
+<area shape="poly" title=" " alt="" coords="134,178,134,212,129,212,129,178"/>
+<area shape="poly" title=" " alt="" coords="117,179,99,195,83,213,74,232,75,241,80,249,102,265,137,279,180,289,229,296,331,305,418,307,418,313,331,310,228,302,179,294,135,284,100,270,76,252,70,242,69,231,78,210,95,191,113,175"/>
+<area shape="poly" title=" " alt="" coords="170,172,378,222,377,227,168,178"/>
+<area shape="poly" title=" " alt="" coords="149,175,205,215,202,219,146,180"/>
+<area shape="poly" title=" " alt="" coords="769,155,768,155,490,104,491,99,769,149,770,149"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="parser_8h__dep__incl.png" border="0" usemap="#ainc_2parser_8hdep" alt=""/></div>
+<map name="ainc_2parser_8hdep" id="ainc_2parser_8hdep">
+<area shape="rect" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="159,5,256,31"/>
+<area shape="rect" href="compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="5,79,119,104"/>
+<area shape="poly" title=" " alt="" coords="173,39,87,81,85,76,171,34"/>
+<area shape="rect" href="decompiler_8h.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="143,79,272,104"/>
+<area shape="poly" title=" " alt="" coords="210,44,210,79,205,79,205,44"/>
+<area shape="rect" href="parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="297,79,393,104"/>
+<area shape="poly" title=" " alt="" coords="243,34,323,76,321,81,240,39"/>
+<area shape="rect" href="compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="6,152,118,177"/>
+<area shape="poly" title=" " alt="" coords="65,118,65,152,59,152,59,118"/>
+<area shape="rect" href="decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="143,152,271,177"/>
+<area shape="poly" title=" " alt="" coords="210,118,210,152,205,152,205,118"/>
+</map>
+</div>
+</div>
+<p><a href="parser_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a49e888dc0e8e45ce73917ae667c5e80d" id="r_a49e888dc0e8e45ce73917ae667c5e80d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8h.html#a49e888dc0e8e45ce73917ae667c5e80d">parse</a> (char *filepath, FILE **inp, int(*parser)(void), int(*lex_destroy)(void))</td></tr>
+<tr class="memdesc:a49e888dc0e8e45ce73917ae667c5e80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un analyseur sur le fichier d'entrée fourni.  <br /></td></tr>
+<tr class="separator:a49e888dc0e8e45ce73917ae667c5e80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant des fonctions liées à l'analyseur. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-24 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a49e888dc0e8e45ce73917ae667c5e80d" name="a49e888dc0e8e45ce73917ae667c5e80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e888dc0e8e45ce73917ae667c5e80d">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int parse </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE **&#160;</td>
+          <td class="paramname"><em>inp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void)&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void)&#160;</td>
+          <td class="paramname"><em>lex_destroy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exécute un analyseur sur le fichier d'entrée fourni. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>Le nom du fichier à analyser. </td></tr>
+    <tr><td class="paramname">inp</td><td>Le pointeur vers l'entrée de l'analyseur. </td></tr>
+    <tr><td class="paramname">parser</td><td>La fonction d'analyse à exécuter. </td></tr>
+    <tr><td class="paramname">lex_destroy</td><td>La fonction de libération de mémoire à exécuter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Le résultat de l'analyse. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

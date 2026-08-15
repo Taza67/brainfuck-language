@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier src/ast.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier ast.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant la structure de données 'Arbre Abstrait de Syntaxe' (AST).  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ast_8h_source.html">ast.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de ast.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="ast_8c__incl.png" border="0" usemap="#asrc_2ast_8c" alt=""/></div>
+<map name="asrc_2ast_8c" id="asrc_2ast_8c">
+<area shape="rect" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="227,5,303,31"/>
+<area shape="rect" href="ast_8h.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="238,79,293,104"/>
+<area shape="poly" title=" " alt="" coords="268,31,268,65,263,65,263,31"/>
+<area shape="rect" title=" " alt="" coords="5,225,72,251"/>
+<area shape="poly" title=" " alt="" coords="239,103,184,123,125,154,88,185,59,216,55,213,85,181,123,150,182,118,237,98"/>
+<area shape="rect" title=" " alt="" coords="97,225,167,251"/>
+<area shape="poly" title=" " alt="" coords="239,100,187,117,161,132,141,154,134,167,131,182,130,212,125,212,125,181,129,165,136,150,158,128,185,112,237,95"/>
+<area shape="rect" title=" " alt="" coords="191,225,262,251"/>
+<area shape="poly" title=" " alt="" coords="265,105,236,213,231,211,260,104"/>
+<area shape="rect" title=" " alt="" coords="287,225,361,251"/>
+<area shape="poly" title=" " alt="" coords="273,103,317,211,312,213,268,105"/>
+<area shape="rect" title=" " alt="" coords="354,152,422,177"/>
+<area shape="poly" title=" " alt="" coords="286,102,358,143,355,147,284,106"/>
+<area shape="rect" title=" " alt="" coords="447,152,529,177"/>
+<area shape="poly" title=" " alt="" coords="294,99,440,145,438,150,292,104"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="151,152,228,177"/>
+<area shape="poly" title=" " alt="" coords="255,106,214,144,210,141,251,102"/>
+<area shape="poly" title=" " alt="" coords="166,180,77,222,75,217,164,175"/>
+<area shape="poly" title=" " alt="" coords="182,179,152,216,148,213,178,176"/>
+<area shape="poly" title=" " alt="" coords="198,176,217,212,212,215,193,179"/>
+<area shape="poly" title=" " alt="" coords="212,175,291,216,289,221,210,180"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4dc8cf3f46c0b2348129e69f48986ed3" id="r_a4dc8cf3f46c0b2348129e69f48986ed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a4dc8cf3f46c0b2348129e69f48986ed3">ast_empty</a> ()</td></tr>
+<tr class="memdesc:a4dc8cf3f46c0b2348129e69f48986ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un arbre vide.  <br /></td></tr>
+<tr class="separator:a4dc8cf3f46c0b2348129e69f48986ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e3b507de191bf49c88ad4b62def364" id="r_a85e3b507de191bf49c88ad4b62def364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a85e3b507de191bf49c88ad4b62def364">ast_is_empty</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a85e3b507de191bf49c88ad4b62def364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si un arbre est vide ou pas.  <br /></td></tr>
+<tr class="separator:a85e3b507de191bf49c88ad4b62def364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92de2891e3fc1102e12ffad3acf4a426" id="r_a92de2891e3fc1102e12ffad3acf4a426"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a92de2891e3fc1102e12ffad3acf4a426">ast</a> (<a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a> data_type,...)</td></tr>
+<tr class="memdesc:a92de2891e3fc1102e12ffad3acf4a426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un arbre initialisé avec les données.  <br /></td></tr>
+<tr class="separator:a92de2891e3fc1102e12ffad3acf4a426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36da4cc6c7f955704dff71543d2552c4" id="r_a36da4cc6c7f955704dff71543d2552c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a36da4cc6c7f955704dff71543d2552c4">ast_add_son</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> son)</td></tr>
+<tr class="memdesc:a36da4cc6c7f955704dff71543d2552c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donne un fils à un arbre et retourne l'arbre père.  <br /></td></tr>
+<tr class="separator:a36da4cc6c7f955704dff71543d2552c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b2460f6dbbad1056e4eedc1cab2816" id="r_a99b2460f6dbbad1056e4eedc1cab2816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a99b2460f6dbbad1056e4eedc1cab2816">ast_add_little_brother</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> little_brother)</td></tr>
+<tr class="memdesc:a99b2460f6dbbad1056e4eedc1cab2816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donne un petit-frère à un arbre et retourne l'arbre grand-frère.  <br /></td></tr>
+<tr class="separator:a99b2460f6dbbad1056e4eedc1cab2816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740ceb331b5ad11d38d4230dde18f668" id="r_a740ceb331b5ad11d38d4230dde18f668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a740ceb331b5ad11d38d4230dde18f668">ast_free</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a740ceb331b5ad11d38d4230dde18f668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée à l'intégralité de l'arbre (racine, fils, petit-frères).  <br /></td></tr>
+<tr class="separator:a740ceb331b5ad11d38d4230dde18f668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94adc1b591ca5d712ea3f5d54ffcf8d8" id="r_a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8c.html#a94adc1b591ca5d712ea3f5d54ffcf8d8">ast_print</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, char *types[], FILE *out)</td></tr>
+<tr class="memdesc:a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime un arbre sur la sortie spécifiée sous un format lisible pour l'oeil humain.  <br /></td></tr>
+<tr class="separator:a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant la structure de données 'Arbre Abstrait de Syntaxe' (AST). </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-20 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a92de2891e3fc1102e12ffad3acf4a426" name="a92de2891e3fc1102e12ffad3acf4a426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92de2891e3fc1102e12ffad3acf4a426">&#9670;&#160;</a></span>ast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a>&#160;</td>
+          <td class="paramname"><em>data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un arbre initialisé avec les données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_type</td><td>Le type de données. </td></tr>
+    <tr><td class="paramname">...</td><td>Les données à affecter aux données de l'arbre. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree Un arbre initialisé avec les données.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Un type de données inconnu provoquera une erreur. </dd>
+<dd>
+Il s'agit d'une fonction variadique. Les appels de fonctions dépendront du type de données à affecter. </dd>
+<dd>
+- Données de type constante : ast(ASTDATA_TYPE_CONST, type: &lt;int&gt;, constant: &lt;int&gt;) </dd>
+<dd>
+- Données de type arbre : ast(ASTDATA_TYPE_TREE, type: &lt;int&gt;, id_lex: &lt;int&gt;, id_symb: &lt;int&gt;,
+        son: Asttree, little_brother: Asttree) </dd></dl>
+
+</div>
+</div>
+<a id="a99b2460f6dbbad1056e4eedc1cab2816" name="a99b2460f6dbbad1056e4eedc1cab2816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b2460f6dbbad1056e4eedc1cab2816">&#9670;&#160;</a></span>ast_add_little_brother()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_add_little_brother </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>little_brother</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Donne un petit-frère à un arbre et retourne l'arbre grand-frère. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre qui reçoit un frère. </td></tr>
+    <tr><td class="paramname">little_brother</td><td>L'arbre petit-frère. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree L'arbre grand-frère.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>L'arbre ne peut pas recevoir de petit-frère s'il est déjà un arbre grand-frère, s'il a déjà un petit-frère. </dd>
+<dd>
+Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Arbre (grand-frère) vide. </dd>
+<dd>
+- Arbre (grand-frère) a déjà un petit-frère. </dd></dl>
+
+</div>
+</div>
+<a id="a36da4cc6c7f955704dff71543d2552c4" name="a36da4cc6c7f955704dff71543d2552c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36da4cc6c7f955704dff71543d2552c4">&#9670;&#160;</a></span>ast_add_son()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_add_son </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>son</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Donne un fils à un arbre et retourne l'arbre père. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre qui reçoit un fils. </td></tr>
+    <tr><td class="paramname">son</td><td>L'arbre fils. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree L'arbre père.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>L'arbre ne peut pas recevoir de fils, s'il est déjà un arbre père, si il a déjà un fils. </dd>
+<dd>
+Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Arbre (père) vide. </dd>
+<dd>
+- Arbre (père) a déjà un fils. </dd></dl>
+
+</div>
+</div>
+<a id="a4dc8cf3f46c0b2348129e69f48986ed3" name="a4dc8cf3f46c0b2348129e69f48986ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc8cf3f46c0b2348129e69f48986ed3">&#9670;&#160;</a></span>ast_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne un arbre vide. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree Un Arbre vide. </dd></dl>
+
+</div>
+</div>
+<a id="a740ceb331b5ad11d38d4230dde18f668" name="a740ceb331b5ad11d38d4230dde18f668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740ceb331b5ad11d38d4230dde18f668">&#9670;&#160;</a></span>ast_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère la mémoire allouée à l'intégralité de l'arbre (racine, fils, petit-frères). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre dont la mémoire doit être libérée.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Attention ! Il ne faut surtout pas qu'il y ait de cycle dans l'arbre. </dd></dl>
+
+</div>
+</div>
+<a id="a85e3b507de191bf49c88ad4b62def364" name="a85e3b507de191bf49c88ad4b62def364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e3b507de191bf49c88ad4b62def364">&#9670;&#160;</a></span>ast_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ast_is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si un arbre est vide ou pas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true Si l'arbre est vide. </dd>
+<dd>
+false Si l'arbre n'est pas vide. </dd></dl>
+
+</div>
+</div>
+<a id="a94adc1b591ca5d712ea3f5d54ffcf8d8" name="a94adc1b591ca5d712ea3f5d54ffcf8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94adc1b591ca5d712ea3f5d54ffcf8d8">&#9670;&#160;</a></span>ast_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>types</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime un arbre sur la sortie spécifiée sous un format lisible pour l'oeil humain. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre à imprimer. </td></tr>
+    <tr><td class="paramname">types</td><td>Les chaînes de caractères associées aux types d'arbres possibles. </td></tr>
+    <tr><td class="paramname">out</td><td>La sortie sur laquelle imprimer l'arbre (Par défaut, stdout). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

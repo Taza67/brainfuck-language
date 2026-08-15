@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier src/compiler.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier compiler.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant la compilation de programmes Brainfuck.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="compiler_8h_source.html">compiler.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de compiler.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="compiler_8c__incl.png" border="0" usemap="#asrc_2compiler_8c" alt=""/></div>
+<map name="asrc_2compiler_8c" id="asrc_2compiler_8c">
+<area shape="rect" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="474,5,586,31"/>
+<area shape="rect" href="compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="485,79,575,104"/>
+<area shape="poly" title=" " alt="" coords="533,31,533,65,527,65,527,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="383,225,477,251"/>
+<area shape="poly" title=" " alt="" coords="486,106,449,124,433,137,420,153,415,167,414,182,421,211,416,213,409,182,410,166,416,151,429,134,446,120,484,102"/>
+<area shape="rect" href="parser_8h.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="430,152,505,177"/>
+<area shape="poly" title=" " alt="" coords="522,106,489,143,485,140,518,103"/>
+<area shape="rect" title=" " alt="" coords="529,152,656,177"/>
+<area shape="poly" title=" " alt="" coords="542,103,575,140,571,143,538,106"/>
+<area shape="rect" title=" " alt="" coords="681,152,819,177"/>
+<area shape="poly" title=" " alt="" coords="566,101,702,145,701,150,564,107"/>
+<area shape="rect" title=" " alt="" coords="145,445,211,471"/>
+<area shape="poly" title=" " alt="" coords="383,246,220,265,139,281,107,291,83,301,52,321,28,344,21,356,18,368,20,381,27,396,42,409,68,421,132,442,130,447,66,426,39,413,22,399,14,383,13,368,16,354,24,340,49,317,81,296,105,286,138,276,219,260,382,241"/>
+<area shape="rect" title=" " alt="" coords="45,445,116,471"/>
+<area shape="poly" title=" " alt="" coords="383,243,298,248,196,258,103,275,67,287,42,301,21,322,11,344,9,368,18,396,32,418,51,435,47,439,28,421,13,398,4,369,5,343,17,319,39,297,65,282,102,269,196,252,297,242,382,238"/>
+<area shape="rect" title=" " alt="" coords="90,372,173,397"/>
+<area shape="poly" title=" " alt="" coords="407,253,168,368,166,364,405,248"/>
+<area shape="rect" title=" " alt="" coords="570,445,645,471"/>
+<area shape="poly" title=" " alt="" coords="446,249,498,297,555,369,596,432,591,435,550,372,495,300,443,253"/>
+<area shape="rect" title=" " alt="" coords="432,445,503,471"/>
+<area shape="poly" title=" " alt="" coords="441,249,475,300,493,334,506,371,508,385,506,398,487,435,482,433,501,397,503,385,501,373,488,337,470,303,437,252"/>
+<area shape="rect" title=" " alt="" coords="670,299,745,324"/>
+<area shape="poly" title=" " alt="" coords="475,248,657,295,656,300,474,253"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="391,372,469,397"/>
+<area shape="poly" title=" " alt="" coords="433,251,433,358,427,358,427,251"/>
+<area shape="rect" href="ast_8h.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="332,299,387,324"/>
+<area shape="poly" title=" " alt="" coords="420,253,382,291,378,287,416,249"/>
+<area shape="rect" href="tstack_8h.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="94,299,169,324"/>
+<area shape="poly" title=" " alt="" coords="382,253,182,301,181,295,381,248"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="769,299,851,324"/>
+<area shape="poly" title=" " alt="" coords="478,246,745,296,756,298,755,303,744,301,477,252"/>
+<area shape="poly" title=" " alt="" coords="392,399,226,446,224,441,390,394"/>
+<area shape="poly" title=" " alt="" coords="391,396,133,448,130,449,129,443,132,443,390,391"/>
+<area shape="poly" title=" " alt="" coords="459,395,567,438,565,443,457,400"/>
+<area shape="poly" title=" " alt="" coords="438,396,457,432,453,435,434,399"/>
+<area shape="poly" title=" " alt="" coords="360,325,348,361,338,381,324,399,301,417,276,431,226,450,224,445,274,426,298,413,320,395,333,378,343,359,354,323"/>
+<area shape="poly" title=" " alt="" coords="353,326,323,362,302,382,278,400,213,425,130,447,129,442,211,420,275,395,298,378,319,358,349,323"/>
+<area shape="poly" title=" " alt="" coords="332,324,182,370,180,365,331,319"/>
+<area shape="poly" title=" " alt="" coords="388,319,443,339,505,370,550,402,587,434,584,438,547,406,502,374,441,344,386,324"/>
+<area shape="poly" title=" " alt="" coords="388,315,438,333,463,349,483,371,489,386,489,403,482,434,476,432,484,402,484,387,478,373,460,353,436,337,386,320"/>
+<area shape="poly" title=" " alt="" coords="373,322,411,360,407,364,369,326"/>
+<area shape="rect" title=" " alt="" coords="197,372,265,397"/>
+<area shape="poly" title=" " alt="" coords="340,326,266,367,263,363,337,322"/>
+<area shape="poly" title=" " alt="" coords="100,327,72,340,47,356,32,376,32,385,36,396,50,408,74,420,132,441,130,446,72,425,47,412,32,399,26,386,27,374,43,352,69,335,97,322"/>
+<area shape="poly" title=" " alt="" coords="95,325,57,343,40,357,27,373,23,389,28,405,40,421,54,435,51,439,36,424,24,408,18,389,22,371,36,353,54,339,92,320"/>
+<area shape="poly" title=" " alt="" coords="134,324,134,358,129,358,129,324"/>
+<area shape="poly" title=" " alt="" coords="117,326,99,341,83,360,74,379,75,387,80,396,102,412,137,425,180,435,229,443,331,452,418,454,418,459,331,457,228,448,179,441,135,430,100,417,76,399,70,389,69,378,78,357,95,337,113,322"/>
+<area shape="poly" title=" " alt="" coords="170,319,378,368,377,374,168,324"/>
+<area shape="poly" title=" " alt="" coords="149,322,205,362,202,366,146,326"/>
+<area shape="poly" title=" " alt="" coords="769,301,768,301,490,251,491,246,769,296,770,296"/>
+<area shape="poly" title=" " alt="" coords="463,179,445,215,440,212,459,176"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a6a4a905e8f9e7ebb894dae8557c49e3b" id="r_a6a4a905e8f9e7ebb894dae8557c49e3b"><td class="memItemLeft" align="right" valign="top"><a id="a6a4a905e8f9e7ebb894dae8557c49e3b" name="a6a4a905e8f9e7ebb894dae8557c49e3b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>cclex_destroy</b> (void)</td></tr>
+<tr class="separator:a6a4a905e8f9e7ebb894dae8557c49e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1538ca92935af4b36fc3d693ee8f5b8" id="r_ae1538ca92935af4b36fc3d693ee8f5b8"><td class="memItemLeft" align="right" valign="top"><a id="ae1538ca92935af4b36fc3d693ee8f5b8" name="ae1538ca92935af4b36fc3d693ee8f5b8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>aalex_destroy</b> (void)</td></tr>
+<tr class="separator:ae1538ca92935af4b36fc3d693ee8f5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1136b7deb5b234d4c879f04baefaa824" id="r_a1136b7deb5b234d4c879f04baefaa824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_8c.html#a1136b7deb5b234d4c879f04baefaa824">ast_to_python</a> (FILE *out, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a1136b7deb5b234d4c879f04baefaa824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en un programme Python.  <br /></td></tr>
+<tr class="separator:a1136b7deb5b234d4c879f04baefaa824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df235ef11706623ff823f85782d5060" id="r_a4df235ef11706623ff823f85782d5060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_8c.html#a4df235ef11706623ff823f85782d5060">ast_to_c</a> (FILE *out, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a4df235ef11706623ff823f85782d5060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en un programme C.  <br /></td></tr>
+<tr class="separator:a4df235ef11706623ff823f85782d5060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2493ffa07f3eb2e2ceb46ccd618410a0" id="r_a2493ffa07f3eb2e2ceb46ccd618410a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_8c.html#a2493ffa07f3eb2e2ceb46ccd618410a0">compile</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a2493ffa07f3eb2e2ceb46ccd618410a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile un programme Brainfuck.  <br /></td></tr>
+<tr class="separator:a2493ffa07f3eb2e2ceb46ccd618410a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a198bc3c3b59fd41cffb4c3ef7a142da5" id="r_a198bc3c3b59fd41cffb4c3ef7a142da5"><td class="memItemLeft" align="right" valign="top"><a id="a198bc3c3b59fd41cffb4c3ef7a142da5" name="a198bc3c3b59fd41cffb4c3ef7a142da5"></a>
+FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>ccin</b></td></tr>
+<tr class="separator:a198bc3c3b59fd41cffb4c3ef7a142da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b23fb4c29a5c2c0dc496f1b407c0092" id="r_a7b23fb4c29a5c2c0dc496f1b407c0092"><td class="memItemLeft" align="right" valign="top"><a id="a7b23fb4c29a5c2c0dc496f1b407c0092" name="a7b23fb4c29a5c2c0dc496f1b407c0092"></a>
+FILE *&#160;</td><td class="memItemRight" valign="bottom"><b>aain</b></td></tr>
+<tr class="separator:a7b23fb4c29a5c2c0dc496f1b407c0092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af657ae4546d7dd9dd6e99f3d71671dc6" id="r_af657ae4546d7dd9dd6e99f3d71671dc6"><td class="memItemLeft" align="right" valign="top"><a id="af657ae4546d7dd9dd6e99f3d71671dc6" name="af657ae4546d7dd9dd6e99f3d71671dc6"></a>
+<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><b>prog_tree</b></td></tr>
+<tr class="memdesc:af657ae4546d7dd9dd6e99f3d71671dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable permettant de stocker les arbres de syntaxe abstraite calculés par les analyseurs. <br /></td></tr>
+<tr class="separator:af657ae4546d7dd9dd6e99f3d71671dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant la compilation de programmes Brainfuck. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-25 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a4df235ef11706623ff823f85782d5060" name="a4df235ef11706623ff823f85782d5060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df235ef11706623ff823f85782d5060">&#9670;&#160;</a></span>ast_to_c()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_to_c </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en un programme C. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Le fichier de sortie. </td></tr>
+    <tr><td class="paramname">tree</td><td>L'arbre de syntaxe à convertir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1136b7deb5b234d4c879f04baefaa824" name="a1136b7deb5b234d4c879f04baefaa824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1136b7deb5b234d4c879f04baefaa824">&#9670;&#160;</a></span>ast_to_python()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_to_python </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en un programme Python. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Le fichier de sortie. </td></tr>
+    <tr><td class="paramname">tree</td><td>L'arbre de syntaxe à convertir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2493ffa07f3eb2e2ceb46ccd618410a0" name="a2493ffa07f3eb2e2ceb46ccd618410a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2493ffa07f3eb2e2ceb46ccd618410a0">&#9670;&#160;</a></span>compile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compile un programme Brainfuck. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Le nombre d'arguments passés au programme principal. </td></tr>
+    <tr><td class="paramname">argv</td><td>Les arguments passés au programme principal.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Un nombre d'arguments incorrect provoquera une erreur. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier inc/decompiler.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier decompiler.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant la décompilation de bytecode ou d'arbres de syntaxe abstraite de programmes Brainfuck obtenus grâce au module 'compiler'.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="brainfuck_8h_source.html">brainfuck.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parser_8h_source.html">parser.h</a>&quot;</code><br />
+<code>#include &quot;parser_ast.tab.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de decompiler.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="decompiler_8h__incl.png" border="0" usemap="#ainc_2decompiler_8h" alt=""/></div>
+<map name="ainc_2decompiler_8h" id="ainc_2decompiler_8h">
+<area shape="rect" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="403,5,532,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="383,152,477,177"/>
+<area shape="poly" title=" " alt="" coords="455,33,436,53,420,80,417,109,423,138,418,139,412,110,415,78,432,50,451,29"/>
+<area shape="rect" href="parser_8h.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="430,79,505,104"/>
+<area shape="poly" title=" " alt="" coords="470,31,470,65,465,65,465,31"/>
+<area shape="rect" title=" " alt="" coords="529,79,656,104"/>
+<area shape="poly" title=" " alt="" coords="489,28,561,69,559,74,486,33"/>
+<area shape="rect" title=" " alt="" coords="145,372,211,397"/>
+<area shape="poly" title=" " alt="" coords="383,172,220,192,139,208,107,217,83,228,52,248,28,270,21,282,18,295,20,308,27,322,42,335,68,348,132,369,130,374,66,353,39,340,22,326,14,310,13,294,16,280,24,267,49,244,81,223,105,212,138,203,219,187,382,167"/>
+<area shape="rect" title=" " alt="" coords="45,372,116,397"/>
+<area shape="poly" title=" " alt="" coords="383,170,298,174,196,184,103,201,67,213,42,227,21,249,11,271,9,295,18,323,32,344,51,362,47,366,28,348,13,325,4,296,5,269,17,246,39,223,65,208,102,196,196,179,297,169,382,165"/>
+<area shape="rect" title=" " alt="" coords="90,299,173,324"/>
+<area shape="poly" title=" " alt="" coords="407,180,168,295,166,290,405,175"/>
+<area shape="rect" title=" " alt="" coords="570,372,645,397"/>
+<area shape="poly" title=" " alt="" coords="446,175,498,224,555,296,596,359,591,362,550,299,495,227,443,179"/>
+<area shape="rect" title=" " alt="" coords="432,372,503,397"/>
+<area shape="poly" title=" " alt="" coords="441,176,475,227,493,261,506,298,508,311,506,325,487,362,482,360,501,323,503,311,501,299,488,263,470,229,437,179"/>
+<area shape="rect" title=" " alt="" coords="670,225,745,251"/>
+<area shape="poly" title=" " alt="" coords="475,175,657,221,656,226,474,180"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="391,299,469,324"/>
+<area shape="poly" title=" " alt="" coords="433,178,433,285,427,285,427,178"/>
+<area shape="rect" href="ast_8h.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="332,225,387,251"/>
+<area shape="poly" title=" " alt="" coords="420,180,382,218,378,214,416,176"/>
+<area shape="rect" href="tstack_8h.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="94,225,169,251"/>
+<area shape="poly" title=" " alt="" coords="382,180,182,227,181,222,381,175"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="769,225,851,251"/>
+<area shape="poly" title=" " alt="" coords="478,173,745,223,756,225,755,230,744,228,477,178"/>
+<area shape="poly" title=" " alt="" coords="392,326,226,373,224,368,390,321"/>
+<area shape="poly" title=" " alt="" coords="391,323,133,375,130,375,129,370,132,369,390,318"/>
+<area shape="poly" title=" " alt="" coords="459,322,567,364,565,369,457,326"/>
+<area shape="poly" title=" " alt="" coords="438,323,457,359,453,361,434,326"/>
+<area shape="poly" title=" " alt="" coords="360,252,348,287,338,308,324,326,301,344,276,358,226,376,224,371,274,353,298,339,320,322,333,305,343,285,354,250"/>
+<area shape="poly" title=" " alt="" coords="353,253,323,289,302,309,278,326,213,351,130,374,129,369,211,346,275,322,298,305,319,285,349,249"/>
+<area shape="poly" title=" " alt="" coords="332,250,182,297,180,292,331,245"/>
+<area shape="poly" title=" " alt="" coords="388,246,443,266,505,296,550,328,587,360,584,364,547,332,502,301,441,271,386,251"/>
+<area shape="poly" title=" " alt="" coords="388,242,438,259,463,275,483,297,489,313,489,330,482,360,476,359,484,329,484,314,478,300,460,279,436,264,386,247"/>
+<area shape="poly" title=" " alt="" coords="373,249,411,287,407,291,369,253"/>
+<area shape="rect" title=" " alt="" coords="197,299,265,324"/>
+<area shape="poly" title=" " alt="" coords="340,253,266,294,263,289,337,248"/>
+<area shape="poly" title=" " alt="" coords="100,253,72,266,47,283,32,302,32,312,36,322,50,335,74,347,132,368,130,373,72,352,47,339,32,326,26,313,27,300,43,279,69,262,97,248"/>
+<area shape="poly" title=" " alt="" coords="95,252,57,270,40,283,27,300,23,316,28,332,40,347,54,361,51,365,36,351,24,334,18,316,22,298,36,280,54,266,92,247"/>
+<area shape="poly" title=" " alt="" coords="134,251,134,285,129,285,129,251"/>
+<area shape="poly" title=" " alt="" coords="117,253,99,268,83,286,74,305,75,314,80,322,102,339,137,352,180,362,229,370,331,378,418,381,418,386,331,384,228,375,179,367,135,357,100,343,76,326,70,315,69,304,78,283,95,264,113,249"/>
+<area shape="poly" title=" " alt="" coords="170,246,378,295,377,300,168,251"/>
+<area shape="poly" title=" " alt="" coords="149,249,205,288,202,293,146,253"/>
+<area shape="poly" title=" " alt="" coords="769,228,768,228,490,178,491,172,769,223,770,223"/>
+<area shape="poly" title=" " alt="" coords="463,106,445,141,440,139,459,103"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="decompiler_8h__dep__incl.png" border="0" usemap="#ainc_2decompiler_8hdep" alt=""/></div>
+<map name="ainc_2decompiler_8hdep" id="ainc_2decompiler_8hdep">
+<area shape="rect" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="5,5,135,31"/>
+<area shape="rect" href="decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="6,79,134,104"/>
+<area shape="poly" title=" " alt="" coords="73,44,73,79,67,79,67,44"/>
+</map>
+</div>
+</div>
+<p><a href="decompiler_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1c41194e79711bd29aa50c1b7d386563" id="r_a1c41194e79711bd29aa50c1b7d386563"><td class="memItemLeft" align="right" valign="top"><a id="a1c41194e79711bd29aa50c1b7d386563" name="a1c41194e79711bd29aa50c1b7d386563"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_LOOP_BEGIN</b>&#160;&#160;&#160;&quot;[&quot;</td></tr>
+<tr class="memdesc:a1c41194e79711bd29aa50c1b7d386563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant le début d'une boucle d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:a1c41194e79711bd29aa50c1b7d386563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed4e9c68290285fbdf1846aaca79cce" id="r_a6ed4e9c68290285fbdf1846aaca79cce"><td class="memItemLeft" align="right" valign="top"><a id="a6ed4e9c68290285fbdf1846aaca79cce" name="a6ed4e9c68290285fbdf1846aaca79cce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_LOOP_END</b>&#160;&#160;&#160;&quot;]&quot;</td></tr>
+<tr class="memdesc:a6ed4e9c68290285fbdf1846aaca79cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant la fin d'une boucle d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:a6ed4e9c68290285fbdf1846aaca79cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99ca670e7fd3d3aca551a6c8f05c9cc" id="r_aa99ca670e7fd3d3aca551a6c8f05c9cc"><td class="memItemLeft" align="right" valign="top"><a id="aa99ca670e7fd3d3aca551a6c8f05c9cc" name="aa99ca670e7fd3d3aca551a6c8f05c9cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_INC</b>&#160;&#160;&#160;&quot;+&quot;</td></tr>
+<tr class="memdesc:aa99ca670e7fd3d3aca551a6c8f05c9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction d'incrémentation d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:aa99ca670e7fd3d3aca551a6c8f05c9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89faa8518e24bbe32c23187714aa06f6" id="r_a89faa8518e24bbe32c23187714aa06f6"><td class="memItemLeft" align="right" valign="top"><a id="a89faa8518e24bbe32c23187714aa06f6" name="a89faa8518e24bbe32c23187714aa06f6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_DEC</b>&#160;&#160;&#160;&quot;-&quot;</td></tr>
+<tr class="memdesc:a89faa8518e24bbe32c23187714aa06f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction de décrémentation d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:a89faa8518e24bbe32c23187714aa06f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e28536b95b015c3db4e919cdb54e6d0" id="r_a4e28536b95b015c3db4e919cdb54e6d0"><td class="memItemLeft" align="right" valign="top"><a id="a4e28536b95b015c3db4e919cdb54e6d0" name="a4e28536b95b015c3db4e919cdb54e6d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_LEFT</b>&#160;&#160;&#160;&quot;&lt;&quot;</td></tr>
+<tr class="memdesc:a4e28536b95b015c3db4e919cdb54e6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction de déplacement vers la gauche d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:a4e28536b95b015c3db4e919cdb54e6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed750aeccb6274596b9d09055fa7cf46" id="r_aed750aeccb6274596b9d09055fa7cf46"><td class="memItemLeft" align="right" valign="top"><a id="aed750aeccb6274596b9d09055fa7cf46" name="aed750aeccb6274596b9d09055fa7cf46"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_RIGHT</b>&#160;&#160;&#160;&quot;&gt;&quot;</td></tr>
+<tr class="memdesc:aed750aeccb6274596b9d09055fa7cf46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction de déplacement vers la droite d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:aed750aeccb6274596b9d09055fa7cf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb14ccd31cef0ca1fda07d1c128ada9" id="r_a4fb14ccd31cef0ca1fda07d1c128ada9"><td class="memItemLeft" align="right" valign="top"><a id="a4fb14ccd31cef0ca1fda07d1c128ada9" name="a4fb14ccd31cef0ca1fda07d1c128ada9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_PUT</b>&#160;&#160;&#160;&quot;.&quot;</td></tr>
+<tr class="memdesc:a4fb14ccd31cef0ca1fda07d1c128ada9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction d'écriture d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:a4fb14ccd31cef0ca1fda07d1c128ada9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a76794eaa48cc79d3c3f1ecf0efb81" id="r_aa5a76794eaa48cc79d3c3f1ecf0efb81"><td class="memItemLeft" align="right" valign="top"><a id="aa5a76794eaa48cc79d3c3f1ecf0efb81" name="aa5a76794eaa48cc79d3c3f1ecf0efb81"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BRAINFUCK_GET</b>&#160;&#160;&#160;&quot;,&quot;</td></tr>
+<tr class="memdesc:aa5a76794eaa48cc79d3c3f1ecf0efb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaîne de caractères représentant l'instruction de lecture d'un programme Brainfuck. <br /></td></tr>
+<tr class="separator:aa5a76794eaa48cc79d3c3f1ecf0efb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a589cb035acb1505812b3decac86cbfde" id="r_a589cb035acb1505812b3decac86cbfde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decompiler_8h.html#a589cb035acb1505812b3decac86cbfde">ast_to_brainfuck</a> (FILE *out, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a589cb035acb1505812b3decac86cbfde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en programme Brainfuck.  <br /></td></tr>
+<tr class="separator:a589cb035acb1505812b3decac86cbfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af558e5a8fda650b63979a277f09c493e" id="r_af558e5a8fda650b63979a277f09c493e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="decompiler_8h.html#af558e5a8fda650b63979a277f09c493e">decompile</a> (char *inpath, char *outpath)</td></tr>
+<tr class="memdesc:af558e5a8fda650b63979a277f09c493e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décompile le bytecode d'un programme Brainfuck.  <br /></td></tr>
+<tr class="separator:af558e5a8fda650b63979a277f09c493e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant la décompilation de bytecode ou d'arbres de syntaxe abstraite de programmes Brainfuck obtenus grâce au module 'compiler'. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-26 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a589cb035acb1505812b3decac86cbfde" name="a589cb035acb1505812b3decac86cbfde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589cb035acb1505812b3decac86cbfde">&#9670;&#160;</a></span>ast_to_brainfuck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_to_brainfuck </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convertis un arbre de syntaxe abstraite d'un programme Brainfuck en programme Brainfuck. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Le fichier de sortie. </td></tr>
+    <tr><td class="paramname">tree</td><td>L'arbre de syntaxe à convertir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af558e5a8fda650b63979a277f09c493e" name="af558e5a8fda650b63979a277f09c493e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af558e5a8fda650b63979a277f09c493e">&#9670;&#160;</a></span>decompile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decompile </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>inpath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>outpath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Décompile le bytecode d'un programme Brainfuck. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inpath</td><td>Le nom du fichier d'entrée. </td></tr>
+    <tr><td class="paramname">outpath</td><td>Le nom du fichier de sortie. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

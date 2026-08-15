@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier src/utilities.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier utilities.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant des fonctions utilitaires pour le programme.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="utilities_8h_source.html">utilities.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de utilities.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="utilities_8c__incl.png" border="0" usemap="#asrc_2utilities_8c" alt=""/></div>
+<map name="asrc_2utilities_8c" id="asrc_2utilities_8c">
+<area shape="rect" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="300,5,405,31"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="311,79,394,104"/>
+<area shape="poly" title=" " alt="" coords="355,31,355,65,350,65,350,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="305,152,400,177"/>
+<area shape="poly" title=" " alt="" coords="348,104,346,139,341,138,343,104"/>
+<area shape="poly" title=" " alt="" coords="356,152,358,118,363,118,362,152"/>
+<area shape="rect" title=" " alt="" coords="46,372,112,397"/>
+<area shape="poly" title=" " alt="" coords="305,173,163,192,95,207,69,217,50,227,27,249,13,270,8,295,16,323,30,344,49,362,46,366,26,348,11,325,3,295,8,268,23,245,47,223,66,212,94,202,163,186,304,167"/>
+<area shape="rect" title=" " alt="" coords="141,372,212,397"/>
+<area shape="poly" title=" " alt="" coords="305,169,232,175,190,183,148,194,108,211,73,234,45,263,25,300,22,312,25,323,40,335,66,348,128,368,127,373,64,352,37,340,21,325,16,312,20,298,40,260,70,230,106,206,147,189,189,177,231,170,305,163"/>
+<area shape="rect" title=" " alt="" coords="88,299,171,324"/>
+<area shape="poly" title=" " alt="" coords="336,180,160,293,157,289,333,175"/>
+<area shape="rect" title=" " alt="" coords="568,372,643,397"/>
+<area shape="poly" title=" " alt="" coords="385,175,430,195,476,223,513,256,546,293,593,359,589,362,542,296,510,260,473,227,428,200,383,180"/>
+<area shape="rect" title=" " alt="" coords="430,372,501,397"/>
+<area shape="poly" title=" " alt="" coords="376,175,407,194,443,221,477,256,504,298,507,315,504,332,488,362,483,360,499,330,502,315,499,300,473,259,439,225,404,199,373,180"/>
+<area shape="rect" title=" " alt="" coords="694,225,768,251"/>
+<area shape="poly" title=" " alt="" coords="400,172,675,223,681,224,680,229,674,228,399,177"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="390,299,467,324"/>
+<area shape="poly" title=" " alt="" coords="363,176,393,224,421,284,416,287,389,227,358,179"/>
+<area shape="rect" href="ast_8h.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="325,225,380,251"/>
+<area shape="poly" title=" " alt="" coords="355,178,355,212,350,212,350,178"/>
+<area shape="rect" href="tstack_8h.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="92,225,167,251"/>
+<area shape="poly" title=" " alt="" coords="317,180,179,224,178,219,316,175"/>
+<area shape="poly" title=" " alt="" coords="390,323,129,375,126,375,125,370,128,369,389,317"/>
+<area shape="poly" title=" " alt="" coords="390,326,226,372,225,367,389,321"/>
+<area shape="poly" title=" " alt="" coords="458,322,565,364,563,369,456,326"/>
+<area shape="poly" title=" " alt="" coords="437,323,456,359,451,361,432,326"/>
+<area shape="poly" title=" " alt="" coords="347,253,319,289,299,309,276,326,249,339,210,352,126,375,125,370,209,347,247,334,273,322,295,305,315,285,343,249"/>
+<area shape="poly" title=" " alt="" coords="353,251,345,287,335,308,322,326,300,344,276,358,226,376,224,371,274,353,297,339,318,322,331,305,339,285,348,250"/>
+<area shape="poly" title=" " alt="" coords="325,251,179,297,178,292,324,246"/>
+<area shape="poly" title=" " alt="" coords="381,245,438,265,503,296,548,328,585,360,582,364,545,332,500,301,436,270,379,250"/>
+<area shape="poly" title=" " alt="" coords="380,241,406,247,434,258,460,274,481,297,487,313,488,330,480,360,475,359,483,329,482,314,477,300,457,279,431,263,404,252,379,246"/>
+<area shape="poly" title=" " alt="" coords="366,249,408,287,404,291,363,253"/>
+<area shape="rect" title=" " alt="" coords="196,299,264,324"/>
+<area shape="poly" title=" " alt="" coords="334,253,263,294,260,289,331,248"/>
+<area shape="poly" title=" " alt="" coords="93,252,55,270,38,283,25,300,21,316,27,332,38,347,53,361,49,365,34,351,22,334,16,316,20,298,35,280,52,266,91,247"/>
+<area shape="poly" title=" " alt="" coords="98,253,70,266,45,283,31,302,30,312,34,322,48,334,71,346,128,367,127,372,69,351,45,339,30,326,25,313,26,300,41,279,67,262,96,248"/>
+<area shape="poly" title=" " alt="" coords="132,251,132,285,127,285,127,251"/>
+<area shape="poly" title=" " alt="" coords="115,253,97,268,81,286,73,305,74,314,78,322,101,339,135,352,178,362,227,370,330,378,417,381,416,386,329,384,227,375,177,367,134,357,98,343,74,326,68,315,68,304,76,283,93,264,111,249"/>
+<area shape="poly" title=" " alt="" coords="168,246,377,295,375,300,167,251"/>
+<area shape="poly" title=" " alt="" coords="147,249,204,288,201,293,144,253"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a349f29fb714af1cc312231912a882b55" id="r_a349f29fb714af1cc312231912a882b55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8c.html#a349f29fb714af1cc312231912a882b55">print_indent</a> (FILE *out, int depth)</td></tr>
+<tr class="memdesc:a349f29fb714af1cc312231912a882b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime l'indentation sur la sortie donnée.  <br /></td></tr>
+<tr class="separator:a349f29fb714af1cc312231912a882b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf4a4b73d1a4ee58825a5f7831713211" id="r_adf4a4b73d1a4ee58825a5f7831713211"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8c.html#adf4a4b73d1a4ee58825a5f7831713211">print_simple_inst</a> (FILE *out, char *inst, int count, int depth)</td></tr>
+<tr class="memdesc:adf4a4b73d1a4ee58825a5f7831713211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime une instruction simple autant de fois qu'il est nécessaire.  <br /></td></tr>
+<tr class="separator:adf4a4b73d1a4ee58825a5f7831713211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d719bcc7e9642207bc0fcb18505667" id="r_a56d719bcc7e9642207bc0fcb18505667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilities_8c.html#a56d719bcc7e9642207bc0fcb18505667">usage</a> (char *program, char *format,...)</td></tr>
+<tr class="memdesc:a56d719bcc7e9642207bc0fcb18505667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la notice d'utilisation du programme.  <br /></td></tr>
+<tr class="separator:a56d719bcc7e9642207bc0fcb18505667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant des fonctions utilitaires pour le programme. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-25 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a349f29fb714af1cc312231912a882b55" name="a349f29fb714af1cc312231912a882b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a349f29fb714af1cc312231912a882b55">&#9670;&#160;</a></span>print_indent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_indent </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime l'indentation sur la sortie donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Le fichier de sortie. </td></tr>
+    <tr><td class="paramname">depth</td><td>Le nombre d'indentations à imprimer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adf4a4b73d1a4ee58825a5f7831713211" name="adf4a4b73d1a4ee58825a5f7831713211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4a4b73d1a4ee58825a5f7831713211">&#9670;&#160;</a></span>print_simple_inst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_simple_inst </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>inst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime une instruction simple autant de fois qu'il est nécessaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Le fichier de sortie. </td></tr>
+    <tr><td class="paramname">inst</td><td>La chaîne de caractère représentant l'instruction. </td></tr>
+    <tr><td class="paramname">count</td><td>Le nombre de fois que l'instruction doit être répétée. </td></tr>
+    <tr><td class="paramname">depth</td><td>La profondeur (indentation) de l'instruction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a56d719bcc7e9642207bc0fcb18505667" name="a56d719bcc7e9642207bc0fcb18505667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d719bcc7e9642207bc0fcb18505667">&#9670;&#160;</a></span>usage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usage </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>program</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la notice d'utilisation du programme. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">program</td><td>Le nom du programme. </td></tr>
+    <tr><td class="paramname">format</td><td>Le format du message pré-notice à afficher. </td></tr>
+    <tr><td class="paramname">...</td><td>Les arguments à placer dans le format du message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="brainfuck_8h.html#a8b53ac32f5ae05b8aa2d8df990501034" title="Notice d&#39;utilisation du programme.">HELP_NOTICE_FORMAT</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

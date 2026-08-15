@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Contributing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Contributing</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md12"></a> Thank you for your interest in <b>brainfuck-language</b>. The project is an interpreter-compiler in C for the Brainfuck language, built with <code>make</code>, <code>flex</code> and <code>bison</code> (C11 standard).</p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Before you start</h1>
+<ul>
+<li>Search the <a href="https://github.com/Taza67/brainfuck-language/issues">existing issues</a> to avoid duplicating work.</li>
+<li>For large or structural changes, open an issue first.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Development environment</h1>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Prerequisites</h2>
+<ul>
+<li><code>gcc</code> (see <code>Makefile</code>: options <code>-std=c11 -Wall -Wextra -g -pedantic -O3</code>)</li>
+<li><code>make</code></li>
+<li><code>flex</code></li>
+<li><code>bison</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Clone and build</h2>
+<div class="fragment"><div class="line">git clone https://github.com/Taza67/brainfuck-language.git</div>
+<div class="line">cd brainfuck-language</div>
+<div class="line">make build</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md17"></a>
+Pull requests</h1>
+<ol type="1">
+<li>Fork the repository and create a branch from <code>main</code>.</li>
+<li>Make focused changes; keep the PRs easy to review.</li>
+<li>Make sure <code>make build</code> compiles without error or warning.</li>
+<li>Open a pull request with a clear description and link the related issues.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Commit messages</h1>
+<p>Follow <a href="https://www.conventionalcommits.org/">Conventional Commits</a>.</p>
+<ul>
+<li><b>Types:</b> <code>feat</code>, <code>fix</code>, <code>refactor</code>, <code>docs</code>, <code>test</code>, <code>chore</code></li>
+<li><b>Description:</b> imperative, lowercase, no trailing period</li>
+<li><b>Body:</b> optional; blank line after the description, then <code>-</code> bullets — lowercase except proper nouns, imperative, no trailing period</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Code organization</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">File   </th><th class="markdownTableHeadNone">Role    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>src/main.c</code>   </td><td class="markdownTableBodyNone">Entry point, dispatch of the execution modes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur.">src/parser.c</a></code>   </td><td class="markdownTableBodyNone">Execution of a lexer/parser on an input file    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck.">src/compiler.c</a></code>   </td><td class="markdownTableBodyNone">Compilation to bytecode, Python and C    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain...">src/decompiler.c</a></code>   </td><td class="markdownTableBodyNone">Decompilation of bytecode to Brainfuck    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="vm_8c.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck.">src/vm.c</a></code>   </td><td class="markdownTableBodyNone">Execution of a program in the virtual machine    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="ast_8c.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST).">src/ast.c</a></code>   </td><td class="markdownTableBodyNone">Abstract syntax tree    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="tstack_8c.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau.">src/tstack.c</a></code>   </td><td class="markdownTableBodyNone">Generic array-based stack    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="utilities_8c.html" title="Module implémentant des fonctions utilitaires pour le programme.">src/utilities.c</a></code>   </td><td class="markdownTableBodyNone">Output and usage helper functions    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="merror_8c.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments.">src/merror.c</a></code>   </td><td class="markdownTableBodyNone">Error and warning messages    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>par/ysrc/parser_ast.y</code>   </td><td class="markdownTableBodyNone">Bison grammar of the bytecode format    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>par/ysrc/parser_code.y</code>   </td><td class="markdownTableBodyNone">Bison grammar of the source language    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>par/lsrc/parser_ast.l</code>   </td><td class="markdownTableBodyNone">Flex lexer of the bytecode format    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>par/lsrc/parser_code.l</code>   </td><td class="markdownTableBodyNone">Flex lexer of the source language   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Code of conduct</h1>
+<p>This project follows the <a class="el" href="md_CODE__OF__CONDUCT.html">Contributor Covenant</a>. By participating, you agree to abide by it. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

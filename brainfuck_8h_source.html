@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck:  Fichier source de inc/brainfuck.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">brainfuck.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="brainfuck_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _BRAINFUCK_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _BRAINFUCK_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="merror_8h.html">merror.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="ast_8h.html">ast.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="tstack_8h.html">tstack.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="utilities_8h.html">utilities.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/*                                   MACROS                                   */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="" data-end="">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a8b53ac32f5ae05b8aa2d8df990501034">   33</a></span><span class="preprocessor">#define HELP_NOTICE_FORMAT \</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">        &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    &quot;- Interpréteur du langage Brainfuck&quot; \</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">    &quot;- Usage: %s [&lt;option&gt; [&lt;sous-option&gt;]] [&lt;entree&gt;] [&lt;sortie&gt;]\n&quot; \</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    &quot;  -    [&lt;option&gt;]                   :    -h    affiche la notice d&#39;utilisation\n&quot; \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    &quot;                                         -c    compile le programme en entrée\n&quot; \</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    &quot;                                         -cb   compile le bytecode en entrée\n&quot; \</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    &quot;                                         -i    interprète le programme en entrée\n&quot; \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">    &quot;                                         -ib   exécute le Bytecode en entrée\n&quot; \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">    &quot;                                         -d    décompile le bytecode en entrée\n&quot; \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">    &quot;  +    -    [&lt;sous-option&gt;]         :    python    compile en Python\n&quot; \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">    &quot;                                         c         compile en C\n&quot; \</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    &quot;                                         + optionnel pour l&#39;option {-c}\n&quot; \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-cb}\n&quot; \</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    &quot;                                         bytecode  compile en C\n&quot; \</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    &quot;                                         + optionnel pour l&#39;option {-c}\n&quot; \</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">    &quot;  -    [&lt;entree&gt;]                   :    code source en langage Brainfuck\n&quot; \</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-c}\n&quot; \</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-i}\n&quot; \</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    &quot;                                         bytecode\n&quot; \</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-cb}\n&quot; \</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-ib}\n&quot; \</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-d}\n&quot; \</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">    &quot;  -    [&lt;sortie&gt;]                   :    nom du fichier de sortie\n&quot; \</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-c}\n&quot; \</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-cb}\n&quot; \</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">    &quot;                                         + nécessaire pour l&#39;option {-d}\n&quot; \</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">    &quot;\n&quot; \</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">    &quot;  -    default                      :    affiche la notice d&#39;utilisation\n&quot; \</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">    &quot;\n&quot;</span></div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="" data-end="">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#ad315e393014449019854a92943bbfe4a">   74</a></span><span class="preprocessor">#define EMPTY_BUFFER() \</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">    char _c = 0; while ((_c = getchar()) != &#39;\n&#39; &amp;&amp; _c != EOF) \</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor"></span> </div>
+</div>
+<div class="foldopen" id="foldopen00087" data-start="" data-end="">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a8b8eb0ca69f5dd626d00dc15c6a7daaf">   87</a></span><span class="preprocessor">#define AST_TYPES_STRINGS { \</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">    &quot;PLUS&quot;, &quot;MOINS&quot;, &quot;DROITE&quot;, &quot;GAUCHE&quot;, \</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">    &quot;ÉCRITURE&quot;, &quot;LECTURE&quot;, &quot;BOUCLE&quot; \</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">}</span></div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">/*                                CONSTANTES                                  */</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6">  103</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6">EXEC_MODES</a> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a333db1e324b69e45a22f910cff41f077">  104</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a333db1e324b69e45a22f910cff41f077">MODE_HELP</a>     ,  </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6afedfedc622915a6b16d90e519baa1fcd">  105</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6afedfedc622915a6b16d90e519baa1fcd">MODE_INTERPRET</a>,  </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a25bd91a727248b8cb4eff9c388b73ebd">  106</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a25bd91a727248b8cb4eff9c388b73ebd">MODE_COMPILE</a>  ,  </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a0c878d350421f645964119faa0a0334e">  107</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a0c878d350421f645964119faa0a0334e">MODE_DECOMPILE</a>,  </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6ac40c087caf0a13ef4b1220bb72f244f9">  108</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6ac40c087caf0a13ef4b1220bb72f244f9">MODE_VM</a>,         </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="};">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85">  119</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85">AST_TYPES</a> {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85ac2df1c02b86b194bfabc843e6436e1f1">  120</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85ac2df1c02b86b194bfabc843e6436e1f1">A_INC</a>  ,  </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1ac2de492d0f411a68e59f70085c1ebb">  121</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1ac2de492d0f411a68e59f70085c1ebb">A_DEC</a>  ,  </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a4b50bcc122a7fdaf412374c1fe2fff5f">  122</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a4b50bcc122a7fdaf412374c1fe2fff5f">A_RIGHT</a>,  </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85adc9b7c1ae50f3ebac052bb14e6f5724f">  123</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85adc9b7c1ae50f3ebac052bb14e6f5724f">A_LEFT</a> ,  </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a185dd819551379d3226a8cb4fe279874">  124</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a185dd819551379d3226a8cb4fe279874">A_PUT</a>  ,  </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1b8937857c6943dee5a035ecf88c06fb">  125</a></span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1b8937857c6943dee5a035ecf88c06fb">A_GET</a>  ,  </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_enumvalue" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a55272519c6ef221e532126904c067ce9">A_LOOP</a>    </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a55272519c6ef221e532126904c067ce9">  127</a></span>};</div>
+</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/* -------------------------------------------------------------------------- */</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aast_8h_html"><div class="ttname"><a href="ast_8h.html">ast.h</a></div><div class="ttdoc">Module implémentant la structure de données 'Arbre Abstrait de Syntaxe' (AST).</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6">EXEC_MODES</a></div><div class="ttdeci">EXEC_MODES</div><div class="ttdoc">Énumération des modes d'exécution du programme.</div><div class="ttdef"><b>Definition</b> brainfuck.h:103</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6a0c878d350421f645964119faa0a0334e"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a0c878d350421f645964119faa0a0334e">MODE_DECOMPILE</a></div><div class="ttdeci">@ MODE_DECOMPILE</div><div class="ttdoc">Décompilation d'un bytecode Brainfuck.</div><div class="ttdef"><b>Definition</b> brainfuck.h:107</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6a25bd91a727248b8cb4eff9c388b73ebd"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a25bd91a727248b8cb4eff9c388b73ebd">MODE_COMPILE</a></div><div class="ttdeci">@ MODE_COMPILE</div><div class="ttdoc">Compilation d'un programme Brainfuck.</div><div class="ttdef"><b>Definition</b> brainfuck.h:106</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6a333db1e324b69e45a22f910cff41f077"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6a333db1e324b69e45a22f910cff41f077">MODE_HELP</a></div><div class="ttdeci">@ MODE_HELP</div><div class="ttdoc">Affichage de la notice d'utilisation.</div><div class="ttdef"><b>Definition</b> brainfuck.h:104</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6ac40c087caf0a13ef4b1220bb72f244f9"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6ac40c087caf0a13ef4b1220bb72f244f9">MODE_VM</a></div><div class="ttdeci">@ MODE_VM</div><div class="ttdoc">Exécution d'un programme Brainfuck en Bytecode.</div><div class="ttdef"><b>Definition</b> brainfuck.h:108</div></div>
+<div class="ttc" id="abrainfuck_8h_html_a4295667663920143c66eea3853c9dbe6afedfedc622915a6b16d90e519baa1fcd"><div class="ttname"><a href="brainfuck_8h.html#a4295667663920143c66eea3853c9dbe6afedfedc622915a6b16d90e519baa1fcd">MODE_INTERPRET</a></div><div class="ttdeci">@ MODE_INTERPRET</div><div class="ttdoc">Interprétation d'un programme Brainfuck.</div><div class="ttdef"><b>Definition</b> brainfuck.h:105</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85">AST_TYPES</a></div><div class="ttdeci">AST_TYPES</div><div class="ttdoc">Énumération des types d'arbres associés aux instructions du langage Brainfuck.</div><div class="ttdef"><b>Definition</b> brainfuck.h:119</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85a185dd819551379d3226a8cb4fe279874"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a185dd819551379d3226a8cb4fe279874">A_PUT</a></div><div class="ttdeci">@ A_PUT</div><div class="ttdoc">Affichage de la valeur de la donnée pointée.</div><div class="ttdef"><b>Definition</b> brainfuck.h:124</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85a1ac2de492d0f411a68e59f70085c1ebb"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1ac2de492d0f411a68e59f70085c1ebb">A_DEC</a></div><div class="ttdeci">@ A_DEC</div><div class="ttdoc">Décrémentation de la case de données pointée.</div><div class="ttdef"><b>Definition</b> brainfuck.h:121</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85a1b8937857c6943dee5a035ecf88c06fb"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a1b8937857c6943dee5a035ecf88c06fb">A_GET</a></div><div class="ttdeci">@ A_GET</div><div class="ttdoc">Récupération d'une entrée.</div><div class="ttdef"><b>Definition</b> brainfuck.h:125</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85a4b50bcc122a7fdaf412374c1fe2fff5f"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a4b50bcc122a7fdaf412374c1fe2fff5f">A_RIGHT</a></div><div class="ttdeci">@ A_RIGHT</div><div class="ttdoc">Déplacement du pointeur de données à droite.</div><div class="ttdef"><b>Definition</b> brainfuck.h:122</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85a55272519c6ef221e532126904c067ce9"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85a55272519c6ef221e532126904c067ce9">A_LOOP</a></div><div class="ttdeci">@ A_LOOP</div><div class="ttdoc">Boucle.</div><div class="ttdef"><b>Definition</b> brainfuck.h:126</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85ac2df1c02b86b194bfabc843e6436e1f1"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85ac2df1c02b86b194bfabc843e6436e1f1">A_INC</a></div><div class="ttdeci">@ A_INC</div><div class="ttdoc">Incrémentation de la case de données pointée.</div><div class="ttdef"><b>Definition</b> brainfuck.h:120</div></div>
+<div class="ttc" id="abrainfuck_8h_html_acd1a4637a380fb17dbaf213af35f2d85adc9b7c1ae50f3ebac052bb14e6f5724f"><div class="ttname"><a href="brainfuck_8h.html#acd1a4637a380fb17dbaf213af35f2d85adc9b7c1ae50f3ebac052bb14e6f5724f">A_LEFT</a></div><div class="ttdeci">@ A_LEFT</div><div class="ttdoc">Déplacement du pointeur de données à gauche.</div><div class="ttdef"><b>Definition</b> brainfuck.h:123</div></div>
+<div class="ttc" id="amerror_8h_html"><div class="ttname"><a href="merror_8h.html">merror.h</a></div><div class="ttdoc">Module implémentant l'affichage de messages d'erreur et d'avertisse ments.</div></div>
+<div class="ttc" id="atstack_8h_html"><div class="ttname"><a href="tstack_8h.html">tstack.h</a></div><div class="ttdoc">Module implémentant la structure de données 'Pile' avec un tableau.</div></div>
+<div class="ttc" id="autilities_8h_html"><div class="ttname"><a href="utilities_8h.html">utilities.h</a></div><div class="ttdoc">Module implémentant des fonctions utilitaires pour le programme.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

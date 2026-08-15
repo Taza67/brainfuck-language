@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier inc/tstack.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier tstack.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant la structure de données 'Pile' avec un tableau.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="merror_8h_source.html">merror.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de tstack.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="tstack_8h__incl.png" border="0" usemap="#ainc_2tstack_8h" alt=""/></div>
+<map name="ainc_2tstack_8h" id="ainc_2tstack_8h">
+<area shape="rect" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="197,5,294,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,72,177"/>
+<area shape="poly" title=" " alt="" coords="223,33,183,54,140,81,98,113,63,144,60,140,95,109,137,76,181,50,220,28"/>
+<area shape="rect" title=" " alt="" coords="97,152,167,177"/>
+<area shape="poly" title=" " alt="" coords="221,33,189,52,159,80,145,109,137,139,132,138,140,107,155,77,185,48,218,28"/>
+<area shape="rect" title=" " alt="" coords="321,79,404,104"/>
+<area shape="poly" title=" " alt="" coords="266,28,333,69,330,74,263,33"/>
+<area shape="rect" title=" " alt="" coords="429,79,497,104"/>
+<area shape="poly" title=" " alt="" coords="281,28,416,72,415,77,279,33"/>
+<area shape="rect" title=" " alt="" coords="291,152,362,177"/>
+<area shape="poly" title=" " alt="" coords="254,30,316,139,311,141,250,32"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="169,79,247,104"/>
+<area shape="poly" title=" " alt="" coords="242,32,223,68,218,65,237,30"/>
+<area shape="poly" title=" " alt="" coords="182,106,80,149,78,144,180,102"/>
+<area shape="poly" title=" " alt="" coords="198,106,156,144,153,141,194,102"/>
+<area shape="poly" title=" " alt="" coords="228,102,297,142,294,147,226,106"/>
+<area shape="rect" title=" " alt="" coords="192,152,267,177"/>
+<area shape="poly" title=" " alt="" coords="214,104,225,138,219,140,209,105"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="tstack_8h__dep__incl.png" border="0" usemap="#ainc_2tstack_8hdep" alt=""/></div>
+<map name="ainc_2tstack_8hdep" id="ainc_2tstack_8hdep">
+<area shape="rect" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="391,5,488,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="315,79,433,104"/>
+<area shape="poly" title=" " alt="" coords="421,43,387,80,383,77,417,39"/>
+<area shape="rect" href="tstack_8c.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="458,79,554,104"/>
+<area shape="poly" title=" " alt="" coords="462,39,497,77,493,80,458,43"/>
+<area shape="rect" href="compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="5,225,119,251"/>
+<area shape="poly" title=" " alt="" coords="302,106,230,124,192,138,157,154,131,171,108,191,74,227,70,223,104,187,128,167,154,150,190,133,228,119,301,101"/>
+<area shape="rect" href="decompiler_8h.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="264,225,393,251"/>
+<area shape="poly" title=" " alt="" coords="368,118,357,153,335,226,329,224,351,151,363,116"/>
+<area shape="rect" href="parser_8h.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="168,152,265,177"/>
+<area shape="poly" title=" " alt="" coords="337,112,243,154,241,149,335,107"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="366,152,473,177"/>
+<area shape="poly" title=" " alt="" coords="383,115,407,150,403,153,379,118"/>
+<area shape="rect" href="vm_8h.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="521,152,600,177"/>
+<area shape="poly" title=" " alt="" coords="417,106,531,149,529,154,416,111"/>
+<area shape="rect" href="compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="6,299,118,324"/>
+<area shape="poly" title=" " alt="" coords="65,264,65,299,59,299,59,264"/>
+<area shape="rect" href="decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="265,299,393,324"/>
+<area shape="poly" title=" " alt="" coords="331,264,331,299,326,299,326,264"/>
+<area shape="poly" title=" " alt="" coords="181,185,88,228,86,223,178,181"/>
+<area shape="poly" title=" " alt="" coords="248,183,312,223,309,227,245,187"/>
+<area shape="rect" href="parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="143,225,239,251"/>
+<area shape="poly" title=" " alt="" coords="210,191,198,226,193,224,205,189"/>
+<area shape="poly" title=" " alt="" coords="410,141,386,106,391,103,415,138"/>
+<area shape="rect" href="utilities_8c.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="417,225,523,251"/>
+<area shape="poly" title=" " alt="" coords="438,187,464,224,460,227,434,190"/>
+<area shape="rect" href="vm_8c.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="546,225,623,251"/>
+<area shape="poly" title=" " alt="" coords="571,189,583,224,578,226,566,191"/>
+</map>
+</div>
+</div>
+<p><a href="tstack_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTstack.html">Tstack</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une pile implémentée avec un tableau.  <a href="structTstack.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a557f89356ec5ad236ae39a888983e9fa" id="r_a557f89356ec5ad236ae39a888983e9fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#a557f89356ec5ad236ae39a888983e9fa">TSTACK_EMPTY</a></td></tr>
+<tr class="memdesc:a557f89356ec5ad236ae39a888983e9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pile vide.  <br /></td></tr>
+<tr class="separator:a557f89356ec5ad236ae39a888983e9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:aa93274e2b30b403ce59173edd1979073" id="r_aa93274e2b30b403ce59173edd1979073"><td class="memItemLeft" align="right" valign="top"><a id="aa93274e2b30b403ce59173edd1979073" name="aa93274e2b30b403ce59173edd1979073"></a>
+typedef struct <a class="el" href="structTstack.html">Tstack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Tstack</b></td></tr>
+<tr class="separator:aa93274e2b30b403ce59173edd1979073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ae5563673d8495d0f262a5019e50aaf70" id="r_ae5563673d8495d0f262a5019e50aaf70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTstack.html">Tstack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#ae5563673d8495d0f262a5019e50aaf70">tstack_empty</a> ()</td></tr>
+<tr class="memdesc:ae5563673d8495d0f262a5019e50aaf70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une pile vide.  <br /></td></tr>
+<tr class="separator:ae5563673d8495d0f262a5019e50aaf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86039cc6d95671f620c9c7722e7d0382" id="r_a86039cc6d95671f620c9c7722e7d0382"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#a86039cc6d95671f620c9c7722e7d0382">tstack_is_empty</a> (<a class="el" href="structTstack.html">Tstack</a> stack)</td></tr>
+<tr class="memdesc:a86039cc6d95671f620c9c7722e7d0382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si une pile est vide.  <br /></td></tr>
+<tr class="separator:a86039cc6d95671f620c9c7722e7d0382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3ad62031bfdd350461965ac7a17804" id="r_a2f3ad62031bfdd350461965ac7a17804"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTstack.html">Tstack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#a2f3ad62031bfdd350461965ac7a17804">tstack</a> (size_t element_count, size_t element_size)</td></tr>
+<tr class="memdesc:a2f3ad62031bfdd350461965ac7a17804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une pile de la taille spécifiée.  <br /></td></tr>
+<tr class="separator:a2f3ad62031bfdd350461965ac7a17804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65aa4e2df4c47535a09129c10c0e261e" id="r_a65aa4e2df4c47535a09129c10c0e261e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTstack.html">Tstack</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#a65aa4e2df4c47535a09129c10c0e261e">tstack_push</a> (<a class="el" href="structTstack.html">Tstack</a> *stackp, void *elementp, size_t element_size)</td></tr>
+<tr class="memdesc:a65aa4e2df4c47535a09129c10c0e261e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empile un élément dans la pile.  <br /></td></tr>
+<tr class="separator:a65aa4e2df4c47535a09129c10c0e261e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1b07ce881eee514e0c748282a6f6e2" id="r_aeb1b07ce881eee514e0c748282a6f6e2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#aeb1b07ce881eee514e0c748282a6f6e2">tstack_head</a> (<a class="el" href="structTstack.html">Tstack</a> *stackp)</td></tr>
+<tr class="memdesc:aeb1b07ce881eee514e0c748282a6f6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le sommet de la pile.  <br /></td></tr>
+<tr class="separator:aeb1b07ce881eee514e0c748282a6f6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73c4140932bd311ce1c8c693a2ac382" id="r_af73c4140932bd311ce1c8c693a2ac382"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#af73c4140932bd311ce1c8c693a2ac382">tstack_pop</a> (<a class="el" href="structTstack.html">Tstack</a> *stackp, void *top_element)</td></tr>
+<tr class="memdesc:af73c4140932bd311ce1c8c693a2ac382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dépile et retourne le sommet de la pile.  <br /></td></tr>
+<tr class="separator:af73c4140932bd311ce1c8c693a2ac382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9bf73e036fede2e06eed89148b781d" id="r_a4c9bf73e036fede2e06eed89148b781d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tstack_8h.html#a4c9bf73e036fede2e06eed89148b781d">tstack_free</a> (<a class="el" href="structTstack.html">Tstack</a> *stackp)</td></tr>
+<tr class="memdesc:a4c9bf73e036fede2e06eed89148b781d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée à la pile.  <br /></td></tr>
+<tr class="separator:a4c9bf73e036fede2e06eed89148b781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant la structure de données 'Pile' avec un tableau. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-22 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a557f89356ec5ad236ae39a888983e9fa" name="a557f89356ec5ad236ae39a888983e9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557f89356ec5ad236ae39a888983e9fa">&#9670;&#160;</a></span>TSTACK_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TSTACK_EMPTY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">    (<a class="code hl_struct" href="structTstack.html">Tstack</a>){ \</div>
+<div class="line">    .top=-1, .s=NULL, .element_size = 0, \</div>
+<div class="line">    .available_count = 0 \</div>
+<div class="line">}</div>
+<div class="ttc" id="astructTstack_html"><div class="ttname"><a href="structTstack.html">Tstack</a></div><div class="ttdoc">Structure représentant une pile implémentée avec un tableau.</div><div class="ttdef"><b>Definition</b> tstack.h:51</div></div>
+</div><!-- fragment -->
+<p>Pile vide. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a2f3ad62031bfdd350461965ac7a17804" name="a2f3ad62031bfdd350461965ac7a17804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f3ad62031bfdd350461965ac7a17804">&#9670;&#160;</a></span>tstack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTstack.html">Tstack</a> tstack </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>element_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>element_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne une pile de la taille spécifiée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element_count</td><td>Le taille de la pile en nombre d'éléments. </td></tr>
+    <tr><td class="paramname">element_size</td><td>La taille (en octets) d'un élément de la pile. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structTstack.html" title="Structure représentant une pile implémentée avec un tableau.">Tstack</a> Une pile initialisée aux paramètres spécifiés. </dd></dl>
+
+</div>
+</div>
+<a id="ae5563673d8495d0f262a5019e50aaf70" name="ae5563673d8495d0f262a5019e50aaf70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5563673d8495d0f262a5019e50aaf70">&#9670;&#160;</a></span>tstack_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTstack.html">Tstack</a> tstack_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne une pile vide. </p>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structTstack.html" title="Structure représentant une pile implémentée avec un tableau.">Tstack</a> Une pile vide. </dd></dl>
+
+</div>
+</div>
+<a id="a4c9bf73e036fede2e06eed89148b781d" name="a4c9bf73e036fede2e06eed89148b781d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9bf73e036fede2e06eed89148b781d">&#9670;&#160;</a></span>tstack_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tstack_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTstack.html">Tstack</a> *&#160;</td>
+          <td class="paramname"><em>stackp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libère la mémoire allouée à la pile. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stackp</td><td>Le pointeur vers la pile dont la mémoire doit être libérée.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Un pointeur NULL provoquera une erreur. </dd></dl>
+
+</div>
+</div>
+<a id="aeb1b07ce881eee514e0c748282a6f6e2" name="aeb1b07ce881eee514e0c748282a6f6e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb1b07ce881eee514e0c748282a6f6e2">&#9670;&#160;</a></span>tstack_head()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * tstack_head </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTstack.html">Tstack</a> *&#160;</td>
+          <td class="paramname"><em>stackp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le sommet de la pile. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stackp</td><td>Le pointeur vers la pile dont le sommet doit être renvoyé. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void* Un pointeur vers le sommet de la pile.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Le type retourné étant (void *), il revient à l'utilisateur de convertir le contenu au bon type. </dd>
+<dd>
+Il est également de la responsabilité de l'utilisateur de libérer la mémoire allouée à l'élément retourné. </dd>
+<dd>
+Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Pointeur NULL. </dd>
+<dd>
+- Pile vide (non initialisée). </dd>
+<dd>
+- Pile ne contient aucun élément.</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="tstack_8h.html#a86039cc6d95671f620c9c7722e7d0382" title="Vérifie si une pile est vide.">tstack_is_empty</a> </dd></dl>
+
+</div>
+</div>
+<a id="a86039cc6d95671f620c9c7722e7d0382" name="a86039cc6d95671f620c9c7722e7d0382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86039cc6d95671f620c9c7722e7d0382">&#9670;&#160;</a></span>tstack_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tstack_is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTstack.html">Tstack</a>&#160;</td>
+          <td class="paramname"><em>stack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vérifie si une pile est vide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stack</td><td>La pile à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true Si la pile est vide. </dd>
+<dd>
+false Si la pile n'est pas vide.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Une pile qui ne contient tout simplement pas d'éléments, mais qui est initialisée n'est pas considérée comme vide ici. </dd>
+<dd>
+Une pile est considérée comme vide : </dd>
+<dd>
+- Si le contenu de la pile n'est pas initialisé (stack.s = NULL) </dd>
+<dd>
+- Si les deux champs element_size et available_count sont nuls (=0), et le champ top = -1. </dd></dl>
+
+</div>
+</div>
+<a id="af73c4140932bd311ce1c8c693a2ac382" name="af73c4140932bd311ce1c8c693a2ac382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73c4140932bd311ce1c8c693a2ac382">&#9670;&#160;</a></span>tstack_pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * tstack_pop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTstack.html">Tstack</a> *&#160;</td>
+          <td class="paramname"><em>stackp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>top_element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dépile et retourne le sommet de la pile. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stackp</td><td>Le pointeur vers la pile dont le sommet doit être dépilé. </td></tr>
+    <tr><td class="paramname">top_element</td><td>Le pointeur de l'emplacement qui doit récupérer le sommet de la pile. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>void* Le pointeur qui récupère le sommet.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Si 'top_element' == NULL alors le sommet ne sera pas recopié et donc libéré automatiquement.</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="tstack_8h.html#aeb1b07ce881eee514e0c748282a6f6e2" title="Retourne le sommet de la pile.">tstack_head</a> </dd></dl>
+
+</div>
+</div>
+<a id="a65aa4e2df4c47535a09129c10c0e261e" name="a65aa4e2df4c47535a09129c10c0e261e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65aa4e2df4c47535a09129c10c0e261e">&#9670;&#160;</a></span>tstack_push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTstack.html">Tstack</a> * tstack_push </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTstack.html">Tstack</a> *&#160;</td>
+          <td class="paramname"><em>stackp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>elementp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>element_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empile un élément dans la pile. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stackp</td><td>Le pointeur vers la pile qui reçoit l'élément. </td></tr>
+    <tr><td class="paramname">elementp</td><td>Le pointeur vers l'élément à empiler. </td></tr>
+    <tr><td class="paramname">element_size</td><td>La taille (en octets) de l'élément à empiler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="structTstack.html" title="Structure représentant une pile implémentée avec un tableau.">Tstack</a> * Le pointeur vers la pile modifiée.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Pointeurs NULL. </dd>
+<dd>
+- Pile vide (non initialisée). </dd>
+<dd>
+- Taille de l'élément différente de celle des éléments de la pile. </dd>
+<dd>
+- Pile pleine.</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="tstack_8h.html#a86039cc6d95671f620c9c7722e7d0382" title="Vérifie si une pile est vide.">tstack_is_empty</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

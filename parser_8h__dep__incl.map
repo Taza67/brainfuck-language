@@ -1,0 +1,13 @@
+<map id="inc/parser.h" name="inc/parser.h">
+<area shape="rect" id="Node000001" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="159,5,256,31"/>
+<area shape="rect" id="Node000002" href="$compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="5,79,119,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,39,87,81,85,76,171,34"/>
+<area shape="rect" id="Node000004" href="$decompiler_8h.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="143,79,272,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,44,210,79,205,79,205,44"/>
+<area shape="rect" id="Node000006" href="$parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="297,79,393,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="243,34,323,76,321,81,240,39"/>
+<area shape="rect" id="Node000003" href="$compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="6,152,118,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,118,65,152,59,152,59,118"/>
+<area shape="rect" id="Node000005" href="$decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="143,152,271,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="210,118,210,152,205,152,205,118"/>
+</map>

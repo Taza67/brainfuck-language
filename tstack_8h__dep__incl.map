@@ -1,0 +1,30 @@
+<map id="inc/tstack.h" name="inc/tstack.h">
+<area shape="rect" id="Node000001" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="391,5,488,31"/>
+<area shape="rect" id="Node000002" href="$brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="315,79,433,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,43,387,80,383,77,417,39"/>
+<area shape="rect" id="Node000013" href="$tstack_8c.html" title="Module implémentant la structure de données &#39;Pile&#39; avec un tableau." alt="" coords="458,79,554,104"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="462,39,497,77,493,80,458,43"/>
+<area shape="rect" id="Node000003" href="$compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="5,225,119,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,106,230,124,192,138,157,154,131,171,108,191,74,227,70,223,104,187,128,167,154,150,190,133,228,119,301,101"/>
+<area shape="rect" id="Node000005" href="$decompiler_8h.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="264,225,393,251"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="368,118,357,153,335,226,329,224,351,151,363,116"/>
+<area shape="rect" id="Node000007" href="$parser_8h.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="168,152,265,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="337,112,243,154,241,149,335,107"/>
+<area shape="rect" id="Node000009" href="$utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="366,152,473,177"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="383,115,407,150,403,153,379,118"/>
+<area shape="rect" id="Node000011" href="$vm_8h.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="521,152,600,177"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="417,106,531,149,529,154,416,111"/>
+<area shape="rect" id="Node000004" href="$compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="6,299,118,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="65,264,65,299,59,299,59,264"/>
+<area shape="rect" id="Node000006" href="$decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="265,299,393,324"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="331,264,331,299,326,299,326,264"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="181,185,88,228,86,223,178,181"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="248,183,312,223,309,227,245,187"/>
+<area shape="rect" id="Node000008" href="$parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="143,225,239,251"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="210,191,198,226,193,224,205,189"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="410,141,386,106,391,103,415,138"/>
+<area shape="rect" id="Node000010" href="$utilities_8c.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="417,225,523,251"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="438,187,464,224,460,227,434,190"/>
+<area shape="rect" id="Node000012" href="$vm_8c.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="546,225,623,251"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="571,189,583,224,578,226,566,191"/>
+</map>

@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Brainfuck: Référence du fichier inc/ast.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Brainfuck
+   </div>
+   <div id="projectbrief">Interpréteur-Compilateur du langage Brainfuck</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier ast.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module implémentant la structure de données 'Arbre Abstrait de Syntaxe' (AST).  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="merror_8h_source.html">merror.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de ast.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ast_8h__incl.png" border="0" usemap="#ainc_2ast_8h" alt=""/></div>
+<map name="ainc_2ast_8h" id="ainc_2ast_8h">
+<area shape="rect" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="227,5,304,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,72,177"/>
+<area shape="poly" title=" " alt="" coords="228,33,178,53,125,81,88,111,59,143,55,139,85,107,123,76,176,48,226,28"/>
+<area shape="rect" title=" " alt="" coords="97,152,167,177"/>
+<area shape="poly" title=" " alt="" coords="227,29,180,47,159,61,141,80,134,94,131,108,130,138,125,138,125,108,129,92,136,77,155,57,178,42,226,24"/>
+<area shape="rect" title=" " alt="" coords="191,152,262,177"/>
+<area shape="poly" title=" " alt="" coords="265,32,236,139,231,138,260,30"/>
+<area shape="rect" title=" " alt="" coords="287,152,361,177"/>
+<area shape="poly" title=" " alt="" coords="273,30,317,138,312,140,268,32"/>
+<area shape="rect" title=" " alt="" coords="354,79,422,104"/>
+<area shape="poly" title=" " alt="" coords="286,28,358,69,355,74,284,33"/>
+<area shape="rect" title=" " alt="" coords="447,79,529,104"/>
+<area shape="poly" title=" " alt="" coords="302,28,440,72,438,77,300,33"/>
+<area shape="rect" href="merror_8h.html" title="Module implémentant l&#39;affichage de messages d&#39;erreur et d&#39;avertisse ments." alt="" coords="151,79,228,104"/>
+<area shape="poly" title=" " alt="" coords="255,33,214,71,210,67,251,29"/>
+<area shape="poly" title=" " alt="" coords="166,106,77,148,75,144,164,102"/>
+<area shape="poly" title=" " alt="" coords="182,106,152,143,148,139,178,103"/>
+<area shape="poly" title=" " alt="" coords="198,103,217,139,212,141,193,106"/>
+<area shape="poly" title=" " alt="" coords="212,102,291,143,289,148,210,106"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="ast_8h__dep__incl.png" border="0" usemap="#ainc_2ast_8hdep" alt=""/></div>
+<map name="ainc_2ast_8hdep" id="ainc_2ast_8hdep">
+<area shape="rect" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="395,5,473,31"/>
+<area shape="rect" href="brainfuck_8h.html" title="En&#45;tête de l&#39;interpréteur Brainfuck." alt="" coords="315,79,433,104"/>
+<area shape="poly" title=" " alt="" coords="417,43,386,80,382,77,413,40"/>
+<area shape="rect" href="ast_8c.html" title="Module implémentant la structure de données &#39;Arbre Abstrait de Syntaxe&#39; (AST)." alt="" coords="457,79,533,104"/>
+<area shape="poly" title=" " alt="" coords="455,40,487,77,483,80,451,43"/>
+<area shape="rect" href="compiler_8h.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="5,225,119,251"/>
+<area shape="poly" title=" " alt="" coords="302,106,230,124,192,138,157,154,131,171,108,191,74,227,70,223,104,187,128,167,154,150,190,133,228,119,301,101"/>
+<area shape="rect" href="decompiler_8h.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="264,225,393,251"/>
+<area shape="poly" title=" " alt="" coords="368,118,357,153,335,226,329,224,351,151,363,116"/>
+<area shape="rect" href="parser_8h.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="168,152,265,177"/>
+<area shape="poly" title=" " alt="" coords="337,112,243,154,241,149,335,107"/>
+<area shape="rect" href="utilities_8h.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="366,152,473,177"/>
+<area shape="poly" title=" " alt="" coords="383,115,407,150,403,153,379,118"/>
+<area shape="rect" href="vm_8h.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="521,152,600,177"/>
+<area shape="poly" title=" " alt="" coords="417,106,531,149,529,154,416,111"/>
+<area shape="rect" href="compiler_8c.html" title="Module implémentant la compilation de programmes Brainfuck." alt="" coords="6,299,118,324"/>
+<area shape="poly" title=" " alt="" coords="65,264,65,299,59,299,59,264"/>
+<area shape="rect" href="decompiler_8c.html" title="Module implémentant la décompilation de bytecode ou d&#39;arbres de syntaxe abstraite de programmes Brain..." alt="" coords="265,299,393,324"/>
+<area shape="poly" title=" " alt="" coords="331,264,331,299,326,299,326,264"/>
+<area shape="poly" title=" " alt="" coords="181,185,88,228,86,223,178,181"/>
+<area shape="poly" title=" " alt="" coords="248,183,312,223,309,227,245,187"/>
+<area shape="rect" href="parser_8c.html" title="Module implémentant des fonctions liées à l&#39;analyseur." alt="" coords="143,225,239,251"/>
+<area shape="poly" title=" " alt="" coords="210,191,198,226,193,224,205,189"/>
+<area shape="poly" title=" " alt="" coords="410,141,386,106,391,103,415,138"/>
+<area shape="rect" href="utilities_8c.html" title="Module implémentant des fonctions utilitaires pour le programme." alt="" coords="417,225,523,251"/>
+<area shape="poly" title=" " alt="" coords="438,187,464,224,460,227,434,190"/>
+<area shape="rect" href="vm_8c.html" title="Module implémentant la machine virtuelle de l&#39;interpréteur Brainfuck." alt="" coords="546,225,623,251"/>
+<area shape="poly" title=" " alt="" coords="571,189,583,224,578,226,566,191"/>
+</map>
+</div>
+</div>
+<p><a href="ast_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAstnode.html">Astnode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un noeud d'arbre de syntaxe abstraite (AST).  <a href="structAstnode.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ada99b34f04c58428a4fb9455475c4410" id="r_ada99b34f04c58428a4fb9455475c4410"><td class="memItemLeft" align="right" valign="top"><a id="ada99b34f04c58428a4fb9455475c4410" name="ada99b34f04c58428a4fb9455475c4410"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_EMPTY</b>&#160;&#160;&#160;NULL</td></tr>
+<tr class="memdesc:ada99b34f04c58428a4fb9455475c4410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arbre vide. <br /></td></tr>
+<tr class="separator:ada99b34f04c58428a4fb9455475c4410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0de1c214f7837248bb8691f31485c2" id="r_afe0de1c214f7837248bb8691f31485c2"><td class="memItemLeft" align="right" valign="top"><a id="afe0de1c214f7837248bb8691f31485c2" name="afe0de1c214f7837248bb8691f31485c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_ROOT_STR</b>&#160;&#160;&#160;&quot;[PROGRAM]&quot;</td></tr>
+<tr class="memdesc:afe0de1c214f7837248bb8691f31485c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Racine d'un AST pour son impression. <br /></td></tr>
+<tr class="separator:afe0de1c214f7837248bb8691f31485c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab4f297e24700234f72b54e3ec0cc2d" id="r_aaab4f297e24700234f72b54e3ec0cc2d"><td class="memItemLeft" align="right" valign="top"><a id="aaab4f297e24700234f72b54e3ec0cc2d" name="aaab4f297e24700234f72b54e3ec0cc2d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_TAB_STR</b>&#160;&#160;&#160;&quot;\t&quot;</td></tr>
+<tr class="memdesc:aaab4f297e24700234f72b54e3ec0cc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère de tabulation dans l'impression d'un AST. <br /></td></tr>
+<tr class="separator:aaab4f297e24700234f72b54e3ec0cc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e00debe85363c75e4a422e3af142dd9" id="r_a1e00debe85363c75e4a422e3af142dd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a1e00debe85363c75e4a422e3af142dd9">AST_OBRA_STR</a>&#160;&#160;&#160;&quot;{&quot;</td></tr>
+<tr class="memdesc:a1e00debe85363c75e4a422e3af142dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère de début d'un ensemble de fils.  <br /></td></tr>
+<tr class="separator:a1e00debe85363c75e4a422e3af142dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e6e9ac8af334e36ae8842a73911ad6" id="r_a78e6e9ac8af334e36ae8842a73911ad6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a78e6e9ac8af334e36ae8842a73911ad6">AST_CBRA_STR</a>&#160;&#160;&#160;&quot;}&quot;</td></tr>
+<tr class="memdesc:a78e6e9ac8af334e36ae8842a73911ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Caractère de fermeture d'un ensemble de fils.  <br /></td></tr>
+<tr class="separator:a78e6e9ac8af334e36ae8842a73911ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5309c58ac811b08fd4327def1666a9" id="r_a6d5309c58ac811b08fd4327def1666a9"><td class="memItemLeft" align="right" valign="top"><a id="a6d5309c58ac811b08fd4327def1666a9" name="a6d5309c58ac811b08fd4327def1666a9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_TYPE_FORMAT</b>&#160;&#160;&#160;&quot;TYPE[%s]&quot;</td></tr>
+<tr class="memdesc:a6d5309c58ac811b08fd4327def1666a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'impression du type d'un arbre. <br /></td></tr>
+<tr class="separator:a6d5309c58ac811b08fd4327def1666a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e7bc90d83ec799a79c49cc1d3cfcce9" id="r_a8e7bc90d83ec799a79c49cc1d3cfcce9"><td class="memItemLeft" align="right" valign="top"><a id="a8e7bc90d83ec799a79c49cc1d3cfcce9" name="a8e7bc90d83ec799a79c49cc1d3cfcce9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_LEX_FORMAT</b>&#160;&#160;&#160;&quot;LEX[%d]&quot;</td></tr>
+<tr class="memdesc:a8e7bc90d83ec799a79c49cc1d3cfcce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'impression du numéro lexicographique d'un arbre. <br /></td></tr>
+<tr class="separator:a8e7bc90d83ec799a79c49cc1d3cfcce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd277e4c164d5dc3bfe96636c77d893a" id="r_afd277e4c164d5dc3bfe96636c77d893a"><td class="memItemLeft" align="right" valign="top"><a id="afd277e4c164d5dc3bfe96636c77d893a" name="afd277e4c164d5dc3bfe96636c77d893a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AST_SYM_FORMAT</b>&#160;&#160;&#160;&quot;SYM[%d]&quot;</td></tr>
+<tr class="memdesc:afd277e4c164d5dc3bfe96636c77d893a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'impression du numéro de symbole d'un arbre. <br /></td></tr>
+<tr class="separator:afd277e4c164d5dc3bfe96636c77d893a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a87ad1790cacd37f82dac7cf99ac8d40c" id="r_a87ad1790cacd37f82dac7cf99ac8d40c"><td class="memItemLeft" align="right" valign="top"><a id="a87ad1790cacd37f82dac7cf99ac8d40c" name="a87ad1790cacd37f82dac7cf99ac8d40c"></a>
+typedef enum <a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Astdata_type</b></td></tr>
+<tr class="separator:a87ad1790cacd37f82dac7cf99ac8d40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ab71dd82100403fc2fcd80e1bf54c5" id="r_ae1ab71dd82100403fc2fcd80e1bf54c5"><td class="memItemLeft" align="right" valign="top"><a id="ae1ab71dd82100403fc2fcd80e1bf54c5" name="ae1ab71dd82100403fc2fcd80e1bf54c5"></a>
+typedef struct <a class="el" href="structAstnode.html">Astnode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Astnode</b></td></tr>
+<tr class="separator:ae1ab71dd82100403fc2fcd80e1bf54c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3ede348351bd45daa914b73e44c524" id="r_afc3ede348351bd45daa914b73e44c524"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structAstnode.html">Astnode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a></td></tr>
+<tr class="memdesc:afc3ede348351bd45daa914b73e44c524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers une structure noeud d'arbre de syntaxe abstraite (AST).  <br /></td></tr>
+<tr class="separator:afc3ede348351bd45daa914b73e44c524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a42d9c534ee3e42e9b0249a2cc3c94b91" id="r_a42d9c534ee3e42e9b0249a2cc3c94b91"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a> { <b>ASTDATA_TYPE_CONST</b>
+, <b>ASTDATA_TYPE_TREE</b>
+ }</td></tr>
+<tr class="memdesc:a42d9c534ee3e42e9b0249a2cc3c94b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Énumération des types de données d'un noeud d'arbre de syntaxe abstraite.  <a href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a42d9c534ee3e42e9b0249a2cc3c94b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4dc8cf3f46c0b2348129e69f48986ed3" id="r_a4dc8cf3f46c0b2348129e69f48986ed3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a4dc8cf3f46c0b2348129e69f48986ed3">ast_empty</a> ()</td></tr>
+<tr class="memdesc:a4dc8cf3f46c0b2348129e69f48986ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un arbre vide.  <br /></td></tr>
+<tr class="separator:a4dc8cf3f46c0b2348129e69f48986ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e3b507de191bf49c88ad4b62def364" id="r_a85e3b507de191bf49c88ad4b62def364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a85e3b507de191bf49c88ad4b62def364">ast_is_empty</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a85e3b507de191bf49c88ad4b62def364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si un arbre est vide ou pas.  <br /></td></tr>
+<tr class="separator:a85e3b507de191bf49c88ad4b62def364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92de2891e3fc1102e12ffad3acf4a426" id="r_a92de2891e3fc1102e12ffad3acf4a426"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a92de2891e3fc1102e12ffad3acf4a426">ast</a> (<a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a> data_type,...)</td></tr>
+<tr class="memdesc:a92de2891e3fc1102e12ffad3acf4a426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un arbre initialisé avec les données.  <br /></td></tr>
+<tr class="separator:a92de2891e3fc1102e12ffad3acf4a426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36da4cc6c7f955704dff71543d2552c4" id="r_a36da4cc6c7f955704dff71543d2552c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a36da4cc6c7f955704dff71543d2552c4">ast_add_son</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> son)</td></tr>
+<tr class="memdesc:a36da4cc6c7f955704dff71543d2552c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donne un fils à un arbre et retourne l'arbre père.  <br /></td></tr>
+<tr class="separator:a36da4cc6c7f955704dff71543d2552c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b2460f6dbbad1056e4eedc1cab2816" id="r_a99b2460f6dbbad1056e4eedc1cab2816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a99b2460f6dbbad1056e4eedc1cab2816">ast_add_little_brother</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, <a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> little_brother)</td></tr>
+<tr class="memdesc:a99b2460f6dbbad1056e4eedc1cab2816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donne un petit-frère à un arbre et retourne l'arbre grand-frère.  <br /></td></tr>
+<tr class="separator:a99b2460f6dbbad1056e4eedc1cab2816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740ceb331b5ad11d38d4230dde18f668" id="r_a740ceb331b5ad11d38d4230dde18f668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a740ceb331b5ad11d38d4230dde18f668">ast_free</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree)</td></tr>
+<tr class="memdesc:a740ceb331b5ad11d38d4230dde18f668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la mémoire allouée à l'intégralité de l'arbre (racine, fils, petit-frères).  <br /></td></tr>
+<tr class="separator:a740ceb331b5ad11d38d4230dde18f668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94adc1b591ca5d712ea3f5d54ffcf8d8" id="r_a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ast_8h.html#a94adc1b591ca5d712ea3f5d54ffcf8d8">ast_print</a> (<a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> tree, char *types[], FILE *out)</td></tr>
+<tr class="memdesc:a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime un arbre sur la sortie spécifiée sous un format lisible pour l'oeil humain.  <br /></td></tr>
+<tr class="separator:a94adc1b591ca5d712ea3f5d54ffcf8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module implémentant la structure de données 'Arbre Abstrait de Syntaxe' (AST). </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mourtaza Akil (akilmourtaza.fr) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2024-04-20 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a78e6e9ac8af334e36ae8842a73911ad6" name="a78e6e9ac8af334e36ae8842a73911ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e6e9ac8af334e36ae8842a73911ad6">&#9670;&#160;</a></span>AST_CBRA_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AST_CBRA_STR&#160;&#160;&#160;&quot;}&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Caractère de fermeture d'un ensemble de fils. </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="ast_8h.html#a1e00debe85363c75e4a422e3af142dd9" title="Caractère de début d&#39;un ensemble de fils.">AST_OBRA_STR</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1e00debe85363c75e4a422e3af142dd9" name="a1e00debe85363c75e4a422e3af142dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e00debe85363c75e4a422e3af142dd9">&#9670;&#160;</a></span>AST_OBRA_STR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AST_OBRA_STR&#160;&#160;&#160;&quot;{&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Caractère de début d'un ensemble de fils. </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="ast_8h.html#a78e6e9ac8af334e36ae8842a73911ad6" title="Caractère de fermeture d&#39;un ensemble de fils.">AST_CBRA_STR</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="afc3ede348351bd45daa914b73e44c524" name="afc3ede348351bd45daa914b73e44c524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc3ede348351bd45daa914b73e44c524">&#9670;&#160;</a></span>Asttree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointeur vers une structure noeud d'arbre de syntaxe abstraite (AST). </p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="structAstnode.html" title="Structure représentant un noeud d&#39;arbre de syntaxe abstraite (AST).">Astnode</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a42d9c534ee3e42e9b0249a2cc3c94b91" name="a42d9c534ee3e42e9b0249a2cc3c94b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d9c534ee3e42e9b0249a2cc3c94b91">&#9670;&#160;</a></span>Astdata_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Énumération des types de données d'un noeud d'arbre de syntaxe abstraite. </p>
+<dl class="section note"><dt>Note</dt><dd>Attention ! Il ne s'agit pas du type de noeud/arbre, mais bien du type de ces données. Un noeud peut avoir deux types de données : données constantes ou données d'un arbre.</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="structAstnode.html" title="Structure représentant un noeud d&#39;arbre de syntaxe abstraite (AST).">Astnode</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a92de2891e3fc1102e12ffad3acf4a426" name="a92de2891e3fc1102e12ffad3acf4a426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92de2891e3fc1102e12ffad3acf4a426">&#9670;&#160;</a></span>ast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#a42d9c534ee3e42e9b0249a2cc3c94b91">Astdata_type</a>&#160;</td>
+          <td class="paramname"><em>data_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un arbre initialisé avec les données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_type</td><td>Le type de données. </td></tr>
+    <tr><td class="paramname">...</td><td>Les données à affecter aux données de l'arbre. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree Un arbre initialisé avec les données.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Un type de données inconnu provoquera une erreur. </dd>
+<dd>
+Il s'agit d'une fonction variadique. Les appels de fonctions dépendront du type de données à affecter. </dd>
+<dd>
+- Données de type constante : ast(ASTDATA_TYPE_CONST, type: &lt;int&gt;, constant: &lt;int&gt;) </dd>
+<dd>
+- Données de type arbre : ast(ASTDATA_TYPE_TREE, type: &lt;int&gt;, id_lex: &lt;int&gt;, id_symb: &lt;int&gt;,
+        son: Asttree, little_brother: Asttree) </dd></dl>
+
+</div>
+</div>
+<a id="a99b2460f6dbbad1056e4eedc1cab2816" name="a99b2460f6dbbad1056e4eedc1cab2816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b2460f6dbbad1056e4eedc1cab2816">&#9670;&#160;</a></span>ast_add_little_brother()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_add_little_brother </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>little_brother</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Donne un petit-frère à un arbre et retourne l'arbre grand-frère. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre qui reçoit un frère. </td></tr>
+    <tr><td class="paramname">little_brother</td><td>L'arbre petit-frère. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree L'arbre grand-frère.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>L'arbre ne peut pas recevoir de petit-frère s'il est déjà un arbre grand-frère, s'il a déjà un petit-frère. </dd>
+<dd>
+Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Arbre (grand-frère) vide. </dd>
+<dd>
+- Arbre (grand-frère) a déjà un petit-frère. </dd></dl>
+
+</div>
+</div>
+<a id="a36da4cc6c7f955704dff71543d2552c4" name="a36da4cc6c7f955704dff71543d2552c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36da4cc6c7f955704dff71543d2552c4">&#9670;&#160;</a></span>ast_add_son()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_add_son </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>son</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Donne un fils à un arbre et retourne l'arbre père. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre qui reçoit un fils. </td></tr>
+    <tr><td class="paramname">son</td><td>L'arbre fils. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree L'arbre père.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>L'arbre ne peut pas recevoir de fils, s'il est déjà un arbre père, si il a déjà un fils. </dd>
+<dd>
+Les éléments suivants provoqueront une erreur : </dd>
+<dd>
+- Arbre (père) vide. </dd>
+<dd>
+- Arbre (père) a déjà un fils. </dd></dl>
+
+</div>
+</div>
+<a id="a4dc8cf3f46c0b2348129e69f48986ed3" name="a4dc8cf3f46c0b2348129e69f48986ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dc8cf3f46c0b2348129e69f48986ed3">&#9670;&#160;</a></span>ast_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a> ast_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un arbre vide. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Asttree Un Arbre vide. </dd></dl>
+
+</div>
+</div>
+<a id="a740ceb331b5ad11d38d4230dde18f668" name="a740ceb331b5ad11d38d4230dde18f668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740ceb331b5ad11d38d4230dde18f668">&#9670;&#160;</a></span>ast_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Libère la mémoire allouée à l'intégralité de l'arbre (racine, fils, petit-frères). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre dont la mémoire doit être libérée.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Attention ! Il ne faut surtout pas qu'il y ait de cycle dans l'arbre. </dd></dl>
+
+</div>
+</div>
+<a id="a85e3b507de191bf49c88ad4b62def364" name="a85e3b507de191bf49c88ad4b62def364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85e3b507de191bf49c88ad4b62def364">&#9670;&#160;</a></span>ast_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ast_is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vérifie si un arbre est vide ou pas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre à vérifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true Si l'arbre est vide. </dd>
+<dd>
+false Si l'arbre n'est pas vide. </dd></dl>
+
+</div>
+</div>
+<a id="a94adc1b591ca5d712ea3f5d54ffcf8d8" name="a94adc1b591ca5d712ea3f5d54ffcf8d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94adc1b591ca5d712ea3f5d54ffcf8d8">&#9670;&#160;</a></span>ast_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ast_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ast_8h.html#afc3ede348351bd45daa914b73e44c524">Asttree</a>&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>types</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Imprime un arbre sur la sortie spécifiée sous un format lisible pour l'oeil humain. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tree</td><td>L'arbre à imprimer. </td></tr>
+    <tr><td class="paramname">types</td><td>Les chaînes de caractères associées aux types d'arbres possibles. </td></tr>
+    <tr><td class="paramname">out</td><td>La sortie sur laquelle imprimer l'arbre (Par défaut, stdout). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
