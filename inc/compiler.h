@@ -195,7 +195,7 @@
  * 
  */
 #define C_INC \
-	"*ptr++;\n"
+	"(*ptr)++;\n"
 
 /**
  * @def C_DEC
@@ -204,7 +204,7 @@
  * 
  */
 #define C_DEC \
-	"*ptr--;\n"
+	"(*ptr)--;\n"
 
 /**
  * @def C_LEFT
